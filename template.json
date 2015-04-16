@@ -83,7 +83,8 @@
     ],
     "post-processors": [
         {
-            "type": "vagrant"
+            "type": "vagrant",
+            "keep_input_artifact": false
         },
         {
             "type": "atlas",
