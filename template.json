@@ -1,8 +1,7 @@
 {
     "variables": {
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_name": "{{env `ATLAS_NAME`}}",
-        "version": "0.0.1"
+        "atlas_name": "{{env `ATLAS_NAME`}}"
     },
     "provisioners": [
         {
@@ -93,7 +92,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "vmware-desktop",
-                "version": "{{user `version`}}"
+                "version": "0.0.1"
             }
         },
         {
@@ -103,7 +102,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "{{user `version`}}"
+                "version": "0.0.1"
             }
         }
     ],
