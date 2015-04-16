@@ -1,4 +1,7 @@
 {
+    "push": {
+      "name": ""
+    },
     "variables": {
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
         "atlas_name": "{{env `ATLAS_NAME`}}"
@@ -28,7 +31,6 @@
     "builders": [
         {
             "type": "virtualbox-iso",
-            "name": "VirtualBox",
             "boot_command": [
                 "<esc><esc><enter><wait>",
                 "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
@@ -56,7 +58,6 @@
         },
         {
             "type": "vmware-iso",
-            "name": "VMware",
             "boot_command": [
                 "<esc><esc><enter><wait>",
                 "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
@@ -108,8 +109,5 @@
                 "version": "0.0.1"
             }
         }]
-    ],
-    "push": {
-        "name": ""
-    }
+    ]
 }
