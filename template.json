@@ -91,7 +91,7 @@
             "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
             "artifact_type": "vagrant.box",
             "metadata": {
-                "provider": "vmware-desktop",
+                "provider": "vmware_desktop",
                 "version": "0.0.1"
             }
         },
@@ -106,5 +106,7 @@
             }
         }
     ],
-    "push": {}
+    "push": {
+        "name": "pearkes/example"
+    }
 }
