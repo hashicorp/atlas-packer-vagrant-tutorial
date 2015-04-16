@@ -1,7 +1,5 @@
 #!/bin/bash
 
-chmod 440 /etc/sudoers.d/vagrant
-
 # Removing leftover leases and persistent rules
 echo "cleaning up dhcp leases"
 rm /var/lib/dhcp/*
