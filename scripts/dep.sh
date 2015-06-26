@@ -2459,8 +2459,8 @@ rm -rf impresscms.sql;
 chown -R www-data impresscms
 chgrp -R www-data impresscms
 cd /srv/www/
-rm -rf /var/www
-ln -s /srv/www/impresscms/htdocs /var/www 
+rm -rf /var/www/html
+ln -s /srv/www/impresscms/htdocs /var/www/html
 
 # Setuping PHPMyAdmin
 git clone https://github.com/phpmyadmin/phpmyadmin phpmyadmin
@@ -2476,6 +2476,7 @@ echo '    Options Indexes FollowSymLinks Includes ExecCGI' >> /etc/apache2/sites
 echo '    AllowOverride all' >> /etc/apache2/sites-available/phpmyadmin.conf
 echo '    Order allow,deny' >> /etc/apache2/sites-available/phpmyadmin.conf
 echo '    Allow from all' >> /etc/apache2/sites-available/phpmyadmin.conf
+echo '    Require all granted' >> /etc/apache2/sites-available/memcached-dashboard.conf
 echo '    DirectoryIndex index.php' >> /etc/apache2/sites-available/phpmyadmin.conf
 echo '  </Directory>' >> /etc/apache2/sites-available/phpmyadmin.conf
 echo '</IfModule>' >> /etc/apache2/sites-available/phpmyadmin.conf
@@ -2648,6 +2649,7 @@ echo '    Options Indexes FollowSymLinks Includes ExecCGI' >> /etc/apache2/sites
 echo '    AllowOverride all' >> /etc/apache2/sites-available/memcached-dashboard.conf
 echo '    Order allow,deny' >> /etc/apache2/sites-available/memcached-dashboard.conf
 echo '    Allow from all' >> /etc/apache2/sites-available/memcached-dashboard.conf
+echo '    Require all granted' >> /etc/apache2/sites-available/memcached-dashboard.conf
 echo '    DirectoryIndex index.php' >> /etc/apache2/sites-available/memcached-dashboard.conf
 echo '  </Directory>' >> /etc/apache2/sites-available/memcached-dashboard.conf
 echo '</IfModule>' >> /etc/apache2/sites-available/memcached-dashboard.conf

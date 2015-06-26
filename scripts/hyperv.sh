@@ -14,5 +14,7 @@ echo "hv_storvsc" >> /etc/initramfs-tools/modules
 echo "hv_blkvsc" >> /etc/initramfs-tools/modules
 echo "hv_netvsc" >> /etc/initramfs-tools/modules
 
-update-initramfs –u
+update-initramfs –u -k all
 
+apt-get -y install linux-cloud-tools-common linux-cloud-tools-virtual
+cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/

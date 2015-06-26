@@ -1,13 +1,37 @@
 {
-    "push": {
-      "name": "",
-      "vcs": true
-    },
-    "variables": {
-        "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_name": "{{env `ATLAS_NAME`}}"
-    },
-    "provisioners": [
+	"variables": {
+		"atlas_username": "{{env `ATLAS_USERNAME`}}",
+		"atlas_name": "{{env `ATLAS_NAME`}}"
+	},
+	"push": {
+	      "name": "",
+	      "vcs": true
+	},
+	"builders": 
+	[
+		{
+			"type": "hyperv-iso",
+			"guest_os_type":"WindowsServer2012R2Datacenter",
+			"product_key" : "{{user `product_key`}}",
+			"iso_url":"ubuntu-15.04-server-amd64.iso",
+			"disk_size_gb":20,
+			"ram_size_mb":1024,
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{ .Name }} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			    ],
+			"ssh_username": "vagrant",
+		        "ssh_password": "vagrant",
+			"wait_time_minutes": "10"
+		}
+	],
+
+	 "provisioners": [
         {
             "type": "shell",
             "scripts": [
@@ -26,19 +50,28 @@
                 }
             }
         }
-    ],
+    ]
+	
+	,"post-processors": 
+	[
+		{
+			"type": "vagrant",
+			"compression_level": 1
+		}
+	]
+}
+
+{
+    "push": {
+      "name": "",
+      "vcs": true
+    },
+    
+   
     "builders": [
         {
             "type": "hyperv-iso",
-            "boot_command": [
-                "<esc><esc><enter><wait>",
-                "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
-                "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
-                "hostname={{ .Name }} ",
-                "fb=false debconf/frontend=noninteractive ",
-                "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA keyboard-configuration/variant=USA console-setup/ask_detect=false ",
-                "initrd=/install/initrd.gz -- <enter>"
-            ],
+            
             "boot_wait": "10s",
             "disk_size": 20480,
 	    "ram_size_mb":1024,
@@ -57,22 +90,5 @@
             "tools_upload_flavor": "linux",
 	    "wait_time_minutes": "10"
         } */
-    ],
-    "post-processors": [
-        [{
-            "type": "vagrant",
-            "keep_input_artifact": false
-        },
-        {
-            "type": "atlas",
-            "only": ["hyperv-iso"],
-            "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "hyperv",
-                "version": "0.0.1"
-            }
-        }
-	]
-    ]
+    ]  
 }
