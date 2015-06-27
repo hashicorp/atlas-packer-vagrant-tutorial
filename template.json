@@ -8,6 +8,11 @@
         "atlas_name": "{{env `ATLAS_NAME`}}"
     },
     "provisioners": [
+	{
+		"type": "file",
+		"source": "data/",
+		"destination": "/tmp"
+	},
         {
             "type": "shell",
             "scripts": [

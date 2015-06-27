@@ -2467,15 +2467,15 @@ git clone https://github.com/phpmyadmin/phpmyadmin phpmyadmin
 git checkout STABLE
 chown -R www-data phpmyadmin
 chgrp -R www-data phpmyadmin
-cp ../data/website-phpmyadmin.conf /etc/apache2/sites-available/website-phpmyadmin.conf
+mv /tmp/data/website-phpmyadmin.conf /etc/apache2/sites-available/website-phpmyadmin.conf
 a2ensite phpmyadmin.conf
-cp ../data/phpmyadmin.conf /srv/www/phpmyadmin/config.inc.php
+mv /tmp/data/phpmyadmin.conf /srv/www/phpmyadmin/config.inc.php
 
 # Setuping Memcached
 git clone https://github.com/bainternet/Memchaced-Dashboard.git Memchaced-Dashboard
 chown -R www-data Memchaced-Dashboard
 chgrp -R www-data Memchaced-Dashboard
-cp ../data/website-memcached-dashboard.conf /etc/apache2/sites-available/memcached-dashboard.conf
+mv /tmp/data/website-memcached-dashboard.conf /etc/apache2/sites-available/memcached-dashboard.conf
 a2ensite memcached-dashboard.conf
 
 # Finished web sites configuration
