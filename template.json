@@ -51,11 +51,11 @@
             "headless": true,
             "boot_wait": "10s",
             "disk_size": 20480,
-            "guest_os_type": "Ubuntu_64",
+            "guest_os_type": "Ubuntu_32",
             "http_directory": "http",
-            "iso_checksum": "6501c8545374665823384bbb6235f865108f56d8a30bbf69dd18df73c14ccb84",
+            "iso_checksum": "f510169ddc03121d11a627ae3a231e1272d8e4d75f9ef76f73daa5b809c5b6d8",
             "iso_checksum_type": "sha256",
-            "iso_url": "http://releases.ubuntu.com/vivid/ubuntu-15.04-server-amd64.iso",
+            "iso_url": "http://releases.ubuntu.com/vivid/ubuntu-15.04-server-i386.iso",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
             "ssh_port": 22,
@@ -77,7 +77,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.0.1"
+                "version": "0.0.2"
             }
         }
 	]
