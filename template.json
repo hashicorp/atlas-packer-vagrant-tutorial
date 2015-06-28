@@ -8,10 +8,17 @@
         "atlas_name": "{{env `ATLAS_NAME`}}"
     },
     "provisioners": [
+	{
+	  "type": "file",
+	  "source": "/data",
+	  "destination": "/tmp"
+	},
         {
             "type": "shell",
             "scripts": [
                 "scripts/base.sh",
+
+		"scripts/fix-data-lines.sh",
 
                 "scripts/virtualbox.sh",
                 "scripts/vmware.sh",
