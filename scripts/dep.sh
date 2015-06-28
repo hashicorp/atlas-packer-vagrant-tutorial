@@ -37,8 +37,8 @@ for f in /tmp/data/sql/*.sql
 do
 	filename=$(basename "$f")
 	db="${filename%.*}"
-	echo "Importing $f file into `$db`..."
-	mysql -uroot -e "create database `$db`; use `$db`; source $f;"
+	echo "Importing $f file into \`$db\`..."
+	mysql -uroot -e "create database \`$db\`; use \`$db\`; source $f;"
 done
 
 # Setuping ImpressCMS
