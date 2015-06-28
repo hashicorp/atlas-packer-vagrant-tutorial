@@ -10,11 +10,11 @@ chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant /home/vagrant/.ssh
 
 # Configure sudoers
-rm -rf /etc/sudoers
-mv /tmp/data/etc/sudoers /etc/
-chmod 0440 /etc/sudoers
-chown root /etc/sudoers
-chgrp root /etc/sudoers
+#rm -rf /etc/sudoers
+#mv /tmp/data/etc/sudoers /etc/
+#chmod 0440 /etc/sudoers
+#chown root /etc/sudoers
+#chgrp root /etc/sudoers
 
 # Customize the message of the day
 echo 'ImpressCMS Development Environment' > /etc/motd
