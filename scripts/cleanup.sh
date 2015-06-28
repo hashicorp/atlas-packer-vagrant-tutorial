@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Removing upload files
-rm -rf /tmp/data
+rm -rf /tmp/*
 
 # Removing leftover leases and persistent rules
 echo "cleaning up dhcp leases"
