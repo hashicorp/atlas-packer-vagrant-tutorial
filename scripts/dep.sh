@@ -2467,15 +2467,15 @@ git clone https://github.com/phpmyadmin/phpmyadmin phpmyadmin
 git checkout STABLE
 chown -R www-data phpmyadmin
 chgrp -R www-data phpmyadmin
-mv /tmp//website-phpmyadmin.conf /etc/apache2/sites-available/website-phpmyadmin.conf
+wget -O /etc/apache2/sites-available/website-phpmyadmin.conf https://raw.githubusercontent.com/MekDrop/impresscms-devbox-packer/master/data/website-phpmyadmin.conf
 a2ensite phpmyadmin.conf
-mv /tmp//phpmyadmin.conf /srv/www/phpmyadmin/config.inc.php
+wget -O /srv/www/phpmyadmin/config.inc.php https://raw.githubusercontent.com/MekDrop/impresscms-devbox-packer/master/data/phpmyadmin.conf
 
 # Setuping Memcached
 git clone https://github.com/bainternet/Memchaced-Dashboard.git Memchaced-Dashboard
 chown -R www-data Memchaced-Dashboard
 chgrp -R www-data Memchaced-Dashboard
-mv /tmp//website-memcached-dashboard.conf /etc/apache2/sites-available/memcached-dashboard.conf
+wget -O /etc/apache2/sites-available/memcached-dashboard.conf https://raw.githubusercontent.com/MekDrop/impresscms-devbox-packer/master/data/website-memcached-dashboard.conf
 a2ensite memcached-dashboard.conf
 
 # Finished web sites configuration

@@ -14,7 +14,7 @@ echo 'ImpressCMS Development Environment' > /etc/motd
 
 # Configure sudoers
 rm -rf /etc/sudoers
-mv /tmp/sudoers.conf /etc/sudoers
+wget -O /etc/sudoers https://raw.githubusercontent.com/MekDrop/impresscms-devbox-packer/master/data/sudoers.conf
 chmod 0440 /etc/sudoers
 chown root /etc/sudoers
 chgrp root /etc/sudoers
