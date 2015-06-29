@@ -1,0 +1,35 @@
+# What is this?
+
+This is a [Atlas Packer](https://www.packer.io) template based on the [Atlas Packer Vagrant Tutorial](https://github.com/hashicorp/atlas-packer-vagrant-tutorial).
+
+# What is template creates?
+
+A Vagrant base box for [ImpressCMS](http://impress.org) development.
+
+# What is inside?
+
+This webbox is based on [Ubuntu 15.04](http://releases.ubuntu.com/15.04/) i386 Server
+
+* [Apache](http://httpd.apache.org)
+* [MySQL](https://www.mysql.com) (**user:** root; **pass:** )
+* [Memcached](http://memcached.org)
+* [phpMyAmin](http://www.phpmyadmin.net/) (Latest stable version from GIT; **url**: http://*BOX_IP*/phpmyadmin)
+* [Memchaced-Dashboard](https://github.com/bainternet/Memchaced-Dashboard) (Latest master version from GIT; **user:** admin; **pass:** admin; **url**: http://*BOX_IP*/md)
+* [ImpressCMS](http://impress.org) (Latest retro version from GIT; **user:** admin; **pass:** admin; **url**: http://*BOX_IP*/);
+
+# How to login on created box?
+
+**User:** vagrant<br />**Pass:** vagrant
+
+# How to use this template?
+
+ 1. Checkout this repo
+ 2. CD to repo folder
+ 3. Make sure [Atlas Packer](https://www.packer.io) is installed on your system
+ 4. Make sure You have *ATLAS_TOKEN* in your environment variables list. You can get this token from https://atlas.hashicorp.com/ (registration needed)
+ 5. Run `packer push -name MekDrop/ImpressCMS-DevBox template.json` (You can change name to Your own but than You must first work this repo)
+ 6. Wait until all script finishes. You can see build progress on https://atlas.hashicorp.com/builds page.
+
+# License
+
+This template use *Mozilla Public License, version 2.0*. See [LICENSE](https://github.com/MekDrop/impresscms-devbox-packer/blob/master/LICENSE) file for more info.
