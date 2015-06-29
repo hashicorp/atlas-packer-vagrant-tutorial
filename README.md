@@ -11,11 +11,11 @@ A Vagrant base box for [ImpressCMS](http://impress.org) development.
 This webbox is based on [Ubuntu 15.04](http://releases.ubuntu.com/15.04/) i386 Server
 
 * [Apache](http://httpd.apache.org)
-* [MySQL](https://www.mysql.com) (**user:** root; **pass:** )
+* [MySQL](https://www.mysql.com)<blockquote>**user:** root <br /> **pass:**</blockquote>
 * [Memcached](http://memcached.org)
-* [phpMyAmin](http://www.phpmyadmin.net/) (Latest stable version from GIT; **url**: http://*BOX_IP*/phpmyadmin)
-* [Memchaced-Dashboard](https://github.com/bainternet/Memchaced-Dashboard) (Latest master version from GIT; **user:** admin; **pass:** admin; **url**: http://*BOX_IP*/md)
-* [ImpressCMS](http://impress.org) (Latest retro version from GIT; **user:** admin; **pass:** admin; **url**: http://*BOX_IP*/);
+* [phpMyAmin](http://www.phpmyadmin.net/)<blockquote>Latest stable version from GIT<br />**url**: http://*BOX_IP*/phpmyadmin</blockquote>
+* [Memchaced-Dashboard](https://github.com/bainternet/Memchaced-Dashboard)<blockquote>Latest master version from GIT<br />**user:** admin<br />**pass:** admin<br />**url**: http://*BOX_IP*/md</blockquote>
+* [ImpressCMS](http://impress.org)<blockquote>Latest retro version from GIT<br />**user:** admin<br />**pass:** admin<br />**url**: http://*BOX_IP*/</blockquote>
 
 # How to login on created box?
 
