@@ -65,8 +65,6 @@ pushd
 	echo Don't worry everything is ok!
 	echo Now You need to login manualy to created box in Hyper-V Manager and run this command:
 	echo source ^<(lynx --dump http://bit.ly/fix-hyperv)
-
-	vagrant box remove ImpressCMSDevBoxTmp
 popd
 goto end
 
@@ -74,14 +72,14 @@ goto end
 set pwd=%CD%
 pushd
 	cd %APP_TEMP_PATH%\tmp_box
-	#vagrant halt	
+	vagrant halt	
 
 	echo Packaging machine...
 	set /p VMachineID=<.vagrant\machines\default\hyperv\id
 	cd ..
 	mkdir npath
-	#powershell "Get-VM -id %VMachineID% | Export-VM -Path npath -Verbose"
-	#vagrant destroy -f
+	powershell "Get-VM -id %VMachineID% | Export-VM -Path npath -Verbose"
+	vagrant destroy -f
 	FOR /D %%G in ("npath/*") DO (
 	   SET FFOLDER=%%G
 	)
@@ -97,8 +95,11 @@ pushd
 		goto retry_build
 	)
 	cd ..\..
-	move real_app.box "%CD%"\	
+	move real_app.box "%pwd%"\	
 popd
+
+del /S /Q "%APP_TEMP_PATH%"
+vagrant box remove ImpressCMSDevBoxTmp
 
 echo Saved to real_app.box
 echo Now You can upload this where You want.
