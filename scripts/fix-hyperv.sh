@@ -4,10 +4,10 @@
 #apt-get install hv-kvp-daemon-init
 #cp /usr/lib/linux-tools/3.19.0-21/hv_* /usr/sbin/
 
-sudo 'echo "hv_vmbus" >> /etc/initramfs-tools/modules'
-sudo 'echo "hv_storvsc" >> /etc/initramfs-tools/modules'
-sudo 'echo "hv_blkvsc" >> /etc/initramfs-tools/modules'
-sudo 'echo "hv_netvsc" >> /etc/initramfs-tools/modules'
+echo "hv_vmbus" | sudo tee --append /etc/initramfs-tools/modules 
+echo "hv_storvsc" | sudo tee --append /etc/initramfs-tools/modules 
+echo "hv_blkvsc" | sudo tee --append /etc/initramfs-tools/modules 
+echo "hv_netvsc" | sudo tee --append /etc/initramfs-tools/modules 
 
 sudo update-initramfs –u -k all
 
