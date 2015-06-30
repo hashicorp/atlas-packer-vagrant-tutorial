@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Bail if we are not running inside VMWare.
-if [[ `facter virtual` != "hyperv" ]]; then
-    exit 0
-fi
-
 #apt-get install linux-tools-3.19.0-21-generic
 #apt-get install hv-kvp-daemon-init
 #cp /usr/lib/linux-tools/3.19.0-21/hv_* /usr/sbin/
@@ -18,3 +13,11 @@ update-initramfs –u -k all
 
 apt-get -y install linux-cloud-tools-common linux-cloud-tools-virtual
 cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/
+
+find /etc -name "*vboxadd*" -exec rm {} \;
+find /etc -name "*vboxvfs*" -exec rm {} \;
+rm -r /usr/src/vboxadd-*
+rm -r /usr/src/vboxvfs-*
+rm /usr/sbin/vboxadd-timesync
+rm /lib/modules/`uname -r`/misc/vboxadd.ko
+rm /lib/modules/`uname -r`/misc/vboxvfs.ko
