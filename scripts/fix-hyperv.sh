@@ -4,23 +4,23 @@
 #apt-get install hv-kvp-daemon-init
 #cp /usr/lib/linux-tools/3.19.0-21/hv_* /usr/sbin/
 
-echo "hv_vmbus" >> /etc/initramfs-tools/modules
-echo "hv_storvsc" >> /etc/initramfs-tools/modules
-echo "hv_blkvsc" >> /etc/initramfs-tools/modules
-echo "hv_netvsc" >> /etc/initramfs-tools/modules
+sudo echo "hv_vmbus" >> /etc/initramfs-tools/modules
+sudo echo "hv_storvsc" >> /etc/initramfs-tools/modules
+sudo echo "hv_blkvsc" >> /etc/initramfs-tools/modules
+sudo echo "hv_netvsc" >> /etc/initramfs-tools/modules
 
-update-initramfs –u -k all
+sudo update-initramfs –u -k all
 
-apt-get -y install linux-cloud-tools-common linux-cloud-tools-virtual
-cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/
+sudo apt-get -y install linux-cloud-tools-common linux-cloud-tools-virtual
+sudo cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/
 
-find /etc -name "*vboxadd*" -exec rm {} \;
-find /etc -name "*vboxvfs*" -exec rm {} \;
-rm -r /usr/src/vboxadd-*
-rm -r /usr/src/vboxvfs-*
-rm /usr/sbin/vboxadd-timesync
-rm /lib/modules/`uname -r`/misc/vboxadd.ko
-rm /lib/modules/`uname -r`/misc/vboxvfs.ko
+sudo find /etc -name "*vboxadd*" -exec rm {} \;
+sudo find /etc -name "*vboxvfs*" -exec rm {} \;
+sudo rm -r /usr/src/vboxadd-*
+sudo rm -r /usr/src/vboxvfs-*
+sudo rm /usr/sbin/vboxadd-timesync
+sudo rm /lib/modules/`uname -r`/misc/vboxadd.ko
+sudo rm /lib/modules/`uname -r`/misc/vboxvfs.ko
 
 echo "Done."
 echo "Now run build.bat again to finish everything"
