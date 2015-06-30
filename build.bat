@@ -32,7 +32,7 @@ mkdir %APP_TEMP_PATH%\new\"Virtual Machines"
 mkdir %APP_TEMP_PATH%\new\Snapshots
 copy box-data\hyperv\"Virtual Machines"\* %APP_TEMP_PATH%\new\"Virtual Machines"\
 copy box-data\hyperv\metadata.json %APP_TEMP_PATH%\new\metadata.json
-pushd 		
+pushd
 	cd %APP_TEMP_PATH%
 	
 	echo "Repacking vagrant box..."
@@ -46,11 +46,11 @@ pushd
 		vboxmanage clonehd %%i app.vhd --format VHD
 	)
 
-	move *.vhd "new/Virtual Hard Disks"
+	move *.vhd "new\Virtual Hard Disks"
 	cd new
 
 	echo "Compressing box..."
-	bsdtar -zcvf ../app.box metadata.json "Virtual Hard Disks" "Virtual Machines" Snapshots
+	bsdtar -zcvf ..\app.box metadata.json "Virtual Hard Disks" "Virtual Machines" Snapshots
 
 	cd ..
 	echo "Adding created box to vagrant..."
@@ -64,13 +64,44 @@ pushd
 
 	echo Don't worry everything is ok!
 	echo Now You need to login manualy to created box in Hyper-V Manager and run this command:
-	echo "sudo source <(curl -s http://bit.ly/fix-hyperv)"
+	echo source ^<(lynx --dump http://bit.ly/fix-hyperv)
 
 	vagrant box remove ImpressCMSDevBoxTmp
 popd
 goto end
 
 :complete_build
+set pwd=%CD%
+pushd
+	cd %APP_TEMP_PATH%\tmp_box
+	#vagrant halt	
+
+	echo Packaging machine...
+	set /p VMachineID=<.vagrant\machines\default\hyperv\id
+	cd ..
+	mkdir npath
+	#powershell "Get-VM -id %VMachineID% | Export-VM -Path npath -Verbose"
+	#vagrant destroy -f
+	FOR /D %%G in ("npath/*") DO (
+	   SET FFOLDER=%%G
+	)
+	copy new\metadata.json npath\%FFOLDER%\
+	del /F /Q npath\%FFOLDER%\"Virtual Machines"\*
+	copy %APP_TEMP_PATH%\new\"Virtual Machines"\* npath\%FFOLDER%\"Virtual Machines"\
+	cd npath\%FFOLDER%
+	echo "Compressing box..."
+:retry_build
+	bsdtar -zcvf ..\..\real_app.box metadata.json "Virtual Hard Disks" "Virtual Machines" Snapshots
+	if not exist "..\..\real_app.box" (
+		echo "Retrying..."
+		goto retry_build
+	)
+	cd ..\..
+	move real_app.box "%CD%"\	
+popd
+
+echo Saved to real_app.box
+echo Now You can upload this where You want.
 
 goto end
 
