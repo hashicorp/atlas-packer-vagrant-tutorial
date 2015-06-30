@@ -9,7 +9,7 @@ echo "hv_storvsc" | sudo tee --append /etc/initramfs-tools/modules
 echo "hv_blkvsc" | sudo tee --append /etc/initramfs-tools/modules 
 echo "hv_netvsc" | sudo tee --append /etc/initramfs-tools/modules 
 
-sudo update-initramfs –u -k all
+sudo update-initramfs –u
 
 sudo apt-get -y install linux-cloud-tools-common linux-cloud-tools-virtual
 sudo cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/
@@ -25,3 +25,7 @@ chown -R vagrant /home/vagrant/.ssh
 
 echo "Done."
 echo "Now run build.bat again to finish everything"
+
+history -c && history -w
+
+exit
