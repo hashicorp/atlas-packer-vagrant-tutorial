@@ -17,7 +17,8 @@ touch /tmp/1.sh
 echo 'rm -rf /home/vagrant/.ssh' >> /tmp/1.sh
 echo "mkdir -pm 700 /home/vagrant/.ssh" >> /tmp/1.sh
 echo -n "wget --no-check-certificate "  >> /tmp/1.sh
-echo -n "'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub'"  >> /tmp/1.sh
+echo -n "'https://raw.github.com/mitchellh" >> /tmp/1.sh
+echo -n "/vagrant/master/keys/vagrant.pub'" >> /tmp/1.sh
 echo " -O /home/vagrant/.ssh/authorized_keys" >> /tmp/1.sh
 echo "chmod 0600 /home/vagrant/.ssh/authorized_keys" >> /tmp/1.sh
 echo "chown -R vagrant /home/vagrant/.ssh" >> /tmp/1.sh
