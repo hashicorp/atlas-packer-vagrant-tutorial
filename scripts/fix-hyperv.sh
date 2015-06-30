@@ -29,6 +29,7 @@ rm -rf /tmp/1.sh
 
 echo "Done."
 echo "Now run build.bat again to finish everything"
+sleep 5
 
 history -c && history -w
 exit
