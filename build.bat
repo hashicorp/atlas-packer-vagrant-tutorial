@@ -98,8 +98,9 @@ pushd
 	move real_app.box "%pwd%"\	
 popd
 
-del /S /Q "%APP_TEMP_PATH%"
 vagrant box remove ImpressCMSDevBoxTmp
+del /S /Q "%APP_TEMP_PATH%"
+rd /S /Q "%APP_TEMP_PATH%"
 
 echo Saved to real_app.box
 echo Now You can upload this where You want.
