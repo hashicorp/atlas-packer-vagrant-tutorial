@@ -1,6 +1,9 @@
 @ECHO OFF
 SETLOCAL  enableextensions enabledelayedexpansion
 
+set APP_TEMP_PATH=%TEMP%\devpacker-convert
+if exist "%APP_TEMP_PATH%" goto complete_build
+
 :find_version
 echo "Searching for version of the box..."
 for /f "delims=^" %%i in ('vagrant box list') do (
@@ -22,7 +25,6 @@ goto find_version
 set found_version=!found_version:~0,-1!
 echo Found version: %found_version%
 
-set APP_TEMP_PATH=%TEMP%\devpacker-convert
 mkdir %APP_TEMP_PATH%
 mkdir %APP_TEMP_PATH%\new
 mkdir %APP_TEMP_PATH%\new\"Virtual Hard Disks"
@@ -62,29 +64,15 @@ pushd
 
 	echo Don't worry everything is ok!
 	echo Now You need to login manualy to created box in Hyper-V Manager and run this command:
-	echo "source <(curl -s http://mywebsite.com/myscript.txt)"
-
-	vagrant ssh -c "sudo find /etc -name "*vboxadd*" -exec rm {} \;"
-	vagrant ssh -c "sudo find /etc -name "*vboxvfs*" -exec rm {} \;"
-	vagrant ssh -c "sudo rm -r /usr/src/vboxadd-*"
-	vagrant ssh -c "sudo rm -r /usr/src/vboxvfs-*"
-	vagrant ssh -c "sudo rm /usr/sbin/vboxadd-timesync"
-	vagrant ssh -c "sudo rm /lib/modules/`uname -r`/misc/vboxadd.ko"
-	vagrant ssh -c "sudo rm /lib/modules/`uname -r`/misc/vboxvfs.ko"
-
-	vagrant ssh -c 'sudo echo "hv_vmbus" >> /etc/initramfs-tools/modules'
-	vagrant ssh -c 'sudo echo "hv_storvsc" >> /etc/initramfs-tools/modules'
-	vagrant ssh -c 'sudo echo "hv_blkvsc" >> /etc/initramfs-tools/modules'
-	vagrant ssh -c 'sudo echo "hv_netvsc" >> /etc/initramfs-tools/modules'
-
-	vagrant ssh -c 'sudo update-initramfs –u -k all'
-
-	vagrant ssh -c 'sudo apt-get -y install linux-cloud-tools-common linux-cloud-tools-virtual'
-
-	vagrant ssh -c 'sudo cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/'
+	echo "sudo source <(curl -s http://bit.ly/fix-hyperv)"
 
 	vagrant box remove ImpressCMSDevBoxTmp
-
 popd
+goto end
 
+:complete_build
+
+goto end
+
+:end
 ENDLOCAL

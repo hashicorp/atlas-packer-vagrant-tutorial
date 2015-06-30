@@ -21,3 +21,6 @@ rm -r /usr/src/vboxvfs-*
 rm /usr/sbin/vboxadd-timesync
 rm /lib/modules/`uname -r`/misc/vboxadd.ko
 rm /lib/modules/`uname -r`/misc/vboxvfs.ko
+
+echo "Done."
+echo "Now run build.bat again to finish everything"
