@@ -26,4 +26,6 @@ chown -R vagrant /home/vagrant/.ssh
 echo "Done."
 echo "Now run build.bat again to finish everything"
 
-history -c && history -w
+#history -c && history -w
+
+#exit
