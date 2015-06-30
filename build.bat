@@ -79,6 +79,7 @@ pushd
 	cd ..
 	mkdir npath
 	powershell "Get-VM -id %VMachineID% | Export-VM -Path npath -Verbose"
+	powershell "Get-VM -id %VMachineID% | Stop-VM -Force -TurnOff"
 	vagrant destroy -f
 	FOR /D %%G in ("npath/*") DO (
 	   SET FFOLDER=%%G
