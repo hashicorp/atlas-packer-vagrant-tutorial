@@ -17,5 +17,11 @@ sudo cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/
 sudo /opt/VBoxGuestAdditions-*/uninstall.sh
 rm -rf /usr/lib/VBoxGuestAdditions
 
+rm -rf /home/vagrant/.ssh
+mkdir -pm 700 /home/vagrant/.ssh
+wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O /home/vagrant/.ssh/authorized_keys
+chmod 0600 /home/vagrant/.ssh/authorized_keys
+chown -R vagrant /home/vagrant/.ssh
+
 echo "Done."
 echo "Now run build.bat again to finish everything"
