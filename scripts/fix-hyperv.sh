@@ -14,13 +14,8 @@ sudo update-initramfs –u -k all
 sudo apt-get -y install linux-cloud-tools-common linux-cloud-tools-virtual
 sudo cp /usr/lib/linux-tools/`uname -r`/hv_* /usr/sbin/
 
-sudo find /etc -name "*vboxadd*" -exec rm {} \;
-sudo find /etc -name "*vboxvfs*" -exec rm {} \;
-sudo rm -r /usr/src/vboxadd-*
-sudo rm -r /usr/src/vboxvfs-*
-sudo rm /usr/sbin/vboxadd-timesync
-sudo rm /lib/modules/`uname -r`/misc/vboxadd.ko
-sudo rm /lib/modules/`uname -r`/misc/vboxvfs.ko
+sudo /opt/VBoxGuestAdditions-*/uninstall.sh
+rm -rf /usr/lib/VBoxGuestAdditions
 
 echo "Done."
 echo "Now run build.bat again to finish everything"
