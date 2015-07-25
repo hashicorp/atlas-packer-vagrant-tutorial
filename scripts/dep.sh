@@ -42,7 +42,7 @@ do
 done
 
 # Setuping ImpressCMS
-git clone https://git.assembla.com/impresscms.git impresscms
+git clone https://github.com/ImpressCMS/impresscms.git impresscms
 git config core.fileMode false
 git fetch --all
 git checkout retro
