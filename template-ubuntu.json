@@ -4,8 +4,10 @@
       "vcs": true
     },
     "variables": {
-        "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_name": "{{env `ATLAS_NAME`}}"
+        "atlas_username2": "{{env `ATLAS_USERNAME`}}",
+        "atlas_name2": "{{env `ATLAS_NAME`}}",
+        "atlas_username": "ImpressCMS",
+        "atlas_name": "DevBox-Ubuntu"
     },
     "provisioners": [
 	{
