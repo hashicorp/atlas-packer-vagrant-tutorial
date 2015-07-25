@@ -66,4 +66,4 @@ cd /srv/www
 chown -R www-data *
 chgrp -R www-data *
 
-sudo sed -i '1s/.*/impresscms-devbox/g' /etc/hostname
+sed -i '1s/.*/impresscms-devbox/g' /etc/hostname
