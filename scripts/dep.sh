@@ -43,6 +43,8 @@ done
 
 # Setuping ImpressCMS
 git clone https://git.assembla.com/impresscms.git impresscms
+git config core.fileMode false
+git fetch --all
 git checkout retro
 cd impresscms/htdocs
 chmod ug=rwx uploads/ cache/ templates_c/ modules/
@@ -63,3 +65,5 @@ git clone https://github.com/bainternet/Memchaced-Dashboard.git Memchaced-Dashbo
 cd /srv/www
 chown -R www-data *
 chgrp -R www-data *
+
+sudo sed -i '1s/.*/impresscms-devbox/g' /etc/hostname
