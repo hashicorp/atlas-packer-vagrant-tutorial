@@ -7,7 +7,9 @@
         "atlas_username2": "{{env `ATLAS_USERNAME`}}",
         "atlas_name2": "{{env `ATLAS_NAME`}}",
         "atlas_username": "ImpressCMS",
-        "atlas_name": "DevBox-Ubuntu"
+        "atlas_name": "DevBox-Ubuntu",
+	"box_name": "ImpressCMS.DevBox",
+	"box_version": "0.0.3"
     },
     "provisioners": [
 	{
@@ -45,7 +47,7 @@
                 "<esc><esc><enter><wait>",
                 "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
                 "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
-                "hostname={{ .Name }} ",
+                "hostname={{user `box_name`}} ",
                 "fb=false debconf/frontend=noninteractive ",
                 "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA keyboard-configuration/variant=USA console-setup/ask_detect=false ",
                 "initrd=/install/initrd.gz -- <enter>"
@@ -79,7 +81,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.0.3"
+                "version": "{{user `box_version`}}"
             }
         }
 	]
