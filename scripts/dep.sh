@@ -32,6 +32,10 @@ chown -R www-data /srv/www
 chgrp -R www-data /srv/www
 usermod -a -G www-data vagrant
 
+# Installing globaly composer
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
 # Importing sql files
 for f in /tmp/data/sql/*.sql
 do
@@ -66,4 +70,3 @@ cd /srv/www
 chown -R www-data *
 chgrp -R www-data *
 
-sed -i '1s/.*/impresscms-devbox/g' /etc/hostname
