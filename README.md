@@ -27,7 +27,7 @@ This webbox is based on [Ubuntu 15.04](http://releases.ubuntu.com/15.04/) i386 S
  2. CD to repo folder
  3. Make sure [Atlas Packer](https://www.packer.io) is installed on your system
  4. Make sure You have *ATLAS_TOKEN* in your environment variables list. You can get this token from https://atlas.hashicorp.com/ (registration needed)
- 5. Run `packer push template-ubuntu.json` (You can change name to Your own but than You must first work this repo)
+ 5. Run `packer push template-ubuntu.json`
  6. Wait until all script finishes. You can see build progress on https://atlas.hashicorp.com/builds page.
 
 # License
