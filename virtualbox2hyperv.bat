@@ -8,7 +8,7 @@ if exist "%APP_TEMP_PATH%" goto complete_build
 echo "Searching for version of the box..."
 for /f "delims=^" %%i in ('vagrant box list') do (
 	for /f "tokens=1,2,3" %%a in ("%%i") do (
-	   if "%%a" == "MekDrop/ImpressCMS-DevBox" if "%%b" == "(virtualbox," (
+	   if "%%a" == "ImpressCMS/DevBox-Ubuntu" if "%%b" == "(virtualbox," (
 		set found_version=%%c
 		goto found_version
 	   )
