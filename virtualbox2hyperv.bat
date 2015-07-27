@@ -1,6 +1,8 @@
 @ECHO OFF
 SETLOCAL  enableextensions enabledelayedexpansion
 
+set BOX=ImpressCMS/DevBox-Ubuntu
+
 set APP_TEMP_PATH=%TEMP%\devpacker-convert
 if exist "%APP_TEMP_PATH%" goto complete_build
 
@@ -8,7 +10,7 @@ if exist "%APP_TEMP_PATH%" goto complete_build
 echo "Searching for version of the box..."
 for /f "delims=^" %%i in ('vagrant box list') do (
 	for /f "tokens=1,2,3" %%a in ("%%i") do (
-	   if "%%a" == "ImpressCMS/DevBox-Ubuntu" if "%%b" == "(virtualbox," (
+	   if "%%a" == "%BOX%" if "%%b" == "(virtualbox," (
 		set found_version=%%c
 		goto found_version
 	   )
@@ -18,7 +20,7 @@ goto not_found_version
 
 :not_found_version
 echo "Adding vagrant box..."
-vagrant box add MekDrop/ImpressCMS-DevBox --provider virtualbox
+vagrant box add %BOX% --provider virtualbox
 goto find_version
 
 :found_version
@@ -36,7 +38,7 @@ pushd
 	cd %APP_TEMP_PATH%
 	
 	echo "Repacking vagrant box..."
-	vagrant box repackage MekDrop/ImpressCMS-DevBox virtualbox %found_version%
+	vagrant box repackage %BOX% virtualbox %found_version%
 	
 	echo "Uncompressing box..."
 	bsdtar -xzvf package.box
