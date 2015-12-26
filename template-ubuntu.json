@@ -5,7 +5,7 @@
         "atlas_username": "ImpressCMS",
         "atlas_name": "DevBox-Ubuntu",
 	"box_name": "ImpressCMS.DevBox",
-	"box_version": "0.0.3"
+	"box_version": "0.0.4"
     },
     "push": {
       "name": "{{user `atlas_username`}}/{{user `atlas_name`}}",
@@ -59,7 +59,7 @@
             "http_directory": "http",
             "iso_checksum": "f510169ddc03121d11a627ae3a231e1272d8e4d75f9ef76f73daa5b809c5b6d8",
             "iso_checksum_type": "sha256",
-            "iso_url": "http://releases.ubuntu.com/vivid/ubuntu-15.04-server-i386.iso",
+            "iso_url": "http://releases.ubuntu.com/15.10/ubuntu-15.10-desktop-i386.iso",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
             "ssh_port": 22,
@@ -79,6 +79,7 @@
             "only": ["virtualbox-iso"],
             "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
             "artifact_type": "vagrant.box",
+	    "compression_level": 9,
             "metadata": {
                 "provider": "virtualbox",
                 "version": "{{user `box_version`}}"
