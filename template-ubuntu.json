@@ -58,7 +58,7 @@
             "guest_os_type": "Ubuntu",
             "http_directory": "http",
             "iso_checksum": "0d9ee8b0b0205a8487d6ed8785ee63a8",
-            "iso_checksum_type": "md5",
+            "iso_checksum_type": "none",
             "iso_url": "http://releases.ubuntu.com/15.10/ubuntu-15.10-desktop-i386.iso",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
