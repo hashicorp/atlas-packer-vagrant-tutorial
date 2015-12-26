@@ -13,8 +13,11 @@ apt-get -y install keychain coreutils mc rar unrar zip unzip nano curl lynx git 
 # DB
 apt-get -q -y install mysql-server mysql-client mysqltuner memcached
 
-# Web dependencies
-apt-get -q -y install apache2 php5 php5-cli php5-gd mysql-client php5-mysqlnd php5-xdebug php5-memcache php5-memcached php5-mcrypt php5-imagick php-codesniffer php5-curl php-pear
+# Web default dependencies
+apt-get -q -y install apache2 php5 php5-cli php5-gd mysql-client php5-mysqlnd php5-xdebug php5-memcached php5-mcrypt php5-curl php5-json
+
+# Some extra PHP libs
+apt-get -q -y install php-codesniffer php5-imagick php-pear php5-memcache php5-sqlite php5-mongo
 
 # E-mail
 apt-get -q -y install sendmail
@@ -70,3 +73,14 @@ cd /srv/www
 chown -R www-data *
 chgrp -R www-data *
 
+# Install PHPUnit
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+sudo mv phpunit.phar /usr/local/bin/phpunit
+phpunit --version
+
+# BlackFire.IO
+wget -O - https://packagecloud.io/gpg.key | sudo apt-key add -
+echo "deb http://packages.blackfire.io/debian any main" | sudo tee /etc/apt/sources.list.d/blackfire.lis
+sudo apt-get update
+sudo apt-get install blackfire-agent
