@@ -79,7 +79,6 @@
             "only": ["virtualbox-iso"],
             "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
             "artifact_type": "vagrant.box",
-	    "compression_level": 9,
             "metadata": {
                 "provider": "virtualbox",
                 "version": "{{user `box_version`}}"
