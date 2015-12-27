@@ -1,0 +1,111 @@
+{  
+   "variables":{  
+      "atlas_username":"ImpressCMS",
+      "atlas_name":"DevBox-Ubuntu",
+      "box_name":"ImpressCMS.DevBox",
+      "box_version":"0.0.4"
+   },
+   "push":{  
+      "name":"{{user `atlas_username`}}/{{user `atlas_name`}}",
+      "vcs":true
+   },
+   "provisioners":[  
+      {  
+         "type":"file",
+         "source":"./data",
+         "destination":"/tmp"
+      },
+      {  
+         "type":"shell",
+         "scripts":[  
+            "./scripts/base.sh",
+            "./scripts/fix-data-lines.sh",
+            "./scripts/virtualbox.sh",
+            "./scripts/vmware.sh",
+            "./scripts/qemu.sh",
+            "./scripts/vagrant.sh",
+            "./scripts/dep.sh",
+            "./scripts/cleanup.sh",
+            "./scripts/zerodisk.sh"
+         ],
+         "override":{  
+            "virtualbox-iso":{  
+               "execute_command":"echo 'vagrant'|sudo -S bash '{{.Path}}'"
+            }
+         }
+      }
+   ],
+   "builders":[  
+      {  
+         "type":"virtualbox-iso",
+         "boot_command":[  
+		"<enter><wait>",
+		"<f6><esc>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+		"<bs><bs><bs>",
+        "/install/vmlinuz",
+        " auto",
+        " console-setup/ask_detect=false",
+        " console-setup/layoutcode=us",
+        " console-setup/modelcode=pc105",
+        " debconf/frontend=noninteractive",
+        " debian-installer=en_US",
+        " fb=false",
+        " initrd=/install/initrd.gz",
+        " kbd-chooser/method=us",
+        " keyboard-configuration/layout=USA",
+        " keyboard-configuration/variant=USA",
+        " locale=en_US",
+        " netcfg/get_domain=vm",
+        " netcfg/get_hostname=vagrant",
+        " grub-installer/bootdev=/dev/sda",
+        " noapic",
+        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+        " -- ",
+        "<enter><wait>"
+         ],
+         "headless":false,
+         "boot_wait":"5s",
+         "disk_size":20480,
+         "guest_os_type":"Ubuntu",
+         "http_directory":"http",
+         "iso_checksum":"0d9ee8b0b0205a8487d6ed8785ee63a8",
+         "iso_checksum_type":"md5",
+         "iso_url":"http://ubuntu-release.mirror.serveriai.lt/15.10/ubuntu-15.10-server-i386.iso",
+         "ssh_username":"vagrant",
+         "ssh_password":"vagrant",
+         "ssh_port":22,
+         "ssh_wait_timeout":"10000s",
+         "shutdown_command":"echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S bash 'shutdown.sh'",
+         "guest_additions_path":"VBoxGuestAdditions_{{.Version}}.iso",
+         "virtualbox_version_file":".vbox_version"
+      }
+   ],
+   "post-processors":[  
+      [  
+         {  
+            "type":"vagrant",
+            "keep_input_artifact":false
+         },
+         {  
+            "type":"atlas",
+            "only":[  
+               "virtualbox-iso"
+            ],
+            "artifact":"{{user `atlas_username`}}/{{user `atlas_name`}}",
+            "artifact_type":"vagrant.box",
+            "metadata":{  
+               "provider":"virtualbox",
+               "version":"{{user `box_version`}}"
+            }
+         }
+      ]
+   ]
+}

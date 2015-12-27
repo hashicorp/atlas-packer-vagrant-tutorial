@@ -1,2 +1,3 @@
 real_app.box
 packer_cache/*
+output-virtualbox-iso/*

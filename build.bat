@@ -1,0 +1,1 @@
+packer build templates/ubuntu.json
