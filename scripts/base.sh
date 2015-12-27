@@ -6,8 +6,6 @@ echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-updates main restricted u
 echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-backports main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-security main restricted universe multiverse" >> /etc/apt/sources.list
 
-sudo sed -i 's/us.archive.ubuntu.com/mirror.math.ucdavis.edu/' 
-
 # Update the box
 apt-get -y update >/dev/null
 apt-get -y install facter linux-headers-$(uname -r) build-essential zlib1g-dev libssl-dev libreadline-gplv2-dev curl unzip >/dev/null
