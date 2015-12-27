@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# Removing upload files
+echo "Removing upload files..."
 rm -rf /tmp/data
 
-# Removing leftover leases and persistent rules
-echo "cleaning up dhcp leases"
+echo "Removing leftover leases and persistent rules..."
 rm /var/lib/dhcp/*
 
-# Make sure Udev doesn't block our network
-echo "cleaning up udev rules"
+echo "Making sure Udev doesn't block our network..."
 rm /etc/udev/rules.d/70-persistent-net.rules
 mkdir /etc/udev/rules.d/70-persistent-net.rules
 rm -rf /dev/.udev/

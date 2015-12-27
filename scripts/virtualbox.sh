@@ -5,6 +5,7 @@ if [[ `facter virtual` != "virtualbox" ]]; then
     exit 0
 fi
 
+echo "Installing VirtualBox quest additions..."
 mkdir -p /mnt/virtualbox
 mount -o loop /home/vagrant/VBoxGuest*.iso /mnt/virtualbox
 sh /mnt/virtualbox/VBoxLinuxAdditions.run

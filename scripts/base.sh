@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Fix apt-get list
+echo "Fixing apt-get list"
 echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily main restricted universe multiverse" > /etc/apt/sources.list
 echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-updates main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-backports main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-security main restricted universe multiverse" >> /etc/apt/sources.list
 
-# Update the box
+echo "Updating the box and installing some usefull tools..."
 apt-get -y update >/dev/null
 apt-get -y install facter linux-headers-$(uname -r) build-essential zlib1g-dev libssl-dev libreadline-gplv2-dev curl unzip >/dev/null
 
-# Tweak sshd to prevent DNS resolution (speed up logins)
+echo "Tweaking sshd to prevent DNS resolution (speed up logins)"
 echo 'UseDNS no' >> /etc/ssh/sshd_config
 
-# Remove 5s grub timeout to speed up booting
+echo "Removing 5s grub timeout to speed up booting"
 cat <<EOF > /etc/default/grub
 # If you change this file, run 'update-grub' afterwards to update
 # /boot/grub/grub.cfg.
