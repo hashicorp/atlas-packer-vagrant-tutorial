@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo "Fixing apt-get list"
-echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily main restricted universe multiverse" > /etc/apt/sources.list
-echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-updates main restricted universe multiverse" >> /etc/apt/sources.list
-echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-backports main restricted universe multiverse" >> /etc/apt/sources.list
-echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-security main restricted universe multiverse" >> /etc/apt/sources.list
+#echo "Fixing apt-get list"
+#echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily main restricted universe multiverse" > /etc/apt/sources.list
+#echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-updates main restricted universe multiverse" >> /etc/apt/sources.list
+#echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-backports main restricted universe multiverse" >> /etc/apt/sources.list
+#echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-security main restricted universe multiverse" >> /etc/apt/sources.list
 
 echo "Updating the box and installing some usefull tools..."
 apt-get -y update >/dev/null
