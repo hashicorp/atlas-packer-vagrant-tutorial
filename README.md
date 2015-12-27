@@ -8,7 +8,7 @@ A Vagrant base box for [ImpressCMS](http://impress.org) development.
 
 # What is inside?
 
-This webbox is based on [Ubuntu 15.04](http://releases.ubuntu.com/15.04/) i386 Server
+This webbox is based on [Ubuntu](http://ubuntu.com/) i386 Server
 
 * [Apache](http://httpd.apache.org)
 * [MySQL](https://www.mysql.com)<blockquote>**user:** root <br /> **pass:**</blockquote>
