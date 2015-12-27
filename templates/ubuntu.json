@@ -71,7 +71,7 @@
         " -- ",
         "<enter><wait>"
          ],
-         "headless":false,
+         "headless":true,
          "boot_wait":"5s",
          "disk_size":20480,
          "guest_os_type":"Ubuntu",
