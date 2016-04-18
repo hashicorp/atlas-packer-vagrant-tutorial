@@ -4,3 +4,4 @@ output-virtualbox-iso/*
 /nbproject/private/
 nbproject/project.properties
 nbproject/project.xml
+/packer_virtualbox-iso_virtualbox.box

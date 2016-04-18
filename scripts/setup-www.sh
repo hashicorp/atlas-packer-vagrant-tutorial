@@ -27,19 +27,15 @@ mkdir -p /vagrant/www
 chown -R www-data /vagrant/www
 chgrp -R www-data /vagrant/www
 git clone https://github.com/ImpressCMS/impresscms.git /vagrant/www
+cd /vagrant/www
 git fetch --all
 git checkout retro
-cd impresscms/htdocs
+cd /vagrant/www/htdocs
 chmod ug=rwx uploads/ cache/ templates_c/ modules/
 cp -r /tmp/data/web-config/impresscms/* -t /vagrant/www/
 cd /vagrant/www
 rm -rf /var/www/html
 ln -s /vagrant/www/htdocs /var/www/html
-
-echo "Setuping PHPMyAdmin..."
-git clone https://github.com/phpmyadmin/phpmyadmin phpmyadmin
-git checkout STABLE
-cp -r /tmp/data/web-config/phpmyadmin/* -t /srv/www/phpmyadmin/
 
 echo "Setuping Memcached..."
 git clone https://github.com/bainternet/Memchaced-Dashboard.git Memchaced-Dashboard
