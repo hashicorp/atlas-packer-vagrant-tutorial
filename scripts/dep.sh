@@ -23,57 +23,6 @@ apt-get -q -y install php-codesniffer php5-imagick php-pear php5-memcache php5-s
 echo "Installing E-mail support..."
 apt-get -q -y install sendmail
 
-echo "Coping websites configs..."
-mv /tmp/data/websites/* /etc/apache2/sites-available/
-cd /etc/apache2/sites-available/
-a2ensite *
-service apache2 restart
-
-echo "Configuring web pages area..."
-mkdir -p /srv/www
-cd /srv/www
-chown -R www-data /srv/www
-chgrp -R www-data /srv/www
-usermod -a -G www-data vagrant
-
-echo "Installing globaly composer..."
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-
-echo "Importing sql files..."
-for f in /tmp/data/sql/*.sql
-do
-	filename=$(basename "$f")
-	db="${filename%.*}"
-	echo "Importing $f file into \`$db\`..."
-	mysql -uroot -e "create database \`$db\`; use \`$db\`; source $f;"
-done
-
-echo "Setuping ImpressCMS..."
-git clone https://github.com/ImpressCMS/impresscms.git impresscms
-git config core.fileMode false
-git fetch --all
-git checkout retro
-cd impresscms/htdocs
-chmod ug=rwx uploads/ cache/ templates_c/ modules/
-cp -r /tmp/data/web-config/impresscms/* -t /srv/www/impresscms/
-cd /srv/www/
-rm -rf /var/www/html
-ln -s /srv/www/impresscms/htdocs /var/www/html
-
-echo "Setuping PHPMyAdmin..."
-git clone https://github.com/phpmyadmin/phpmyadmin phpmyadmin
-git checkout STABLE
-cp -r /tmp/data/web-config/phpmyadmin/* -t /srv/www/phpmyadmin/
-
-echo "Setuping Memcached..."
-git clone https://github.com/bainternet/Memchaced-Dashboard.git Memchaced-Dashboard
-
-echo "Fixing rights for all folders..."
-cd /srv/www
-chown -R www-data *
-chgrp -R www-data *
-
 echo "Install PHPUnit..."
 wget https://phar.phpunit.de/phpunit.phar
 chmod +x phpunit.phar
@@ -83,5 +32,14 @@ phpunit --version
 echo "Installing BlackFire.IO agent..."
 wget -O - https://packagecloud.io/gpg.key | sudo apt-key add -
 echo "deb http://packages.blackfire.io/debian any main" | sudo tee /etc/apt/sources.list.d/blackfire.list
-apt-get update
-apt-get install blackfire-agent
+apt-get -q -y update
+apt-get -q -y install blackfire-agent
+
+echo "Installing globaly composer..."
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
+echo "Installing phpMyAdmin..."
+apt-get -q -y install phpmyadmin
+php5enmod mcrypt
+service apache2 restart

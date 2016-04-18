@@ -18,3 +18,8 @@ chgrp root /etc/sudoers
 
 echo "Customize the message of the day..."
 echo 'ImpressCMS Development Environment' > /etc/motd
+
+echo "Setuping vagrant folder..."
+mkdir -p /vagrant
+chown vagrant /vagrant
+chgrp vagrant /vagrant
