@@ -42,4 +42,6 @@ mv composer.phar /usr/local/bin/composer
 echo "Installing phpMyAdmin..."
 apt-get -q -y install phpmyadmin
 php5enmod mcrypt
+rm -rf /etc/phpmyadmin/config.inc.php
+cp /tmp/data/web-config/config.inc.php /etc/phpmyadmin/config.inc.php
 service apache2 restart
