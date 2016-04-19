@@ -31,7 +31,7 @@ git fetch --all
 git checkout retro
 cd htdocs
 chmod ug=rwx uploads/ cache/ templates_c/ modules/
-cp -r /tmp/data/web-config/impresscms/* -t /srv/www/
+cp -r /tmp/data/web-config/impresscms/* -t /srv/backup/impresscms
 
 rm -rf /var/www/html
 mkdir -p /vagrant
