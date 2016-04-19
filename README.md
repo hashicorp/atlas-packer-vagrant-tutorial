@@ -1,3 +1,4 @@
+[![License](https://img.shields.io/github/license/ImpressCMS/packer-impresscms-devbox.svg?maxAge=2592000)](License.txt) ![GitHub release](https://img.shields.io/github/release/ImpressCMS/packer-impresscms-devbox.svg?maxAge=2592000)
 # What is this?
 
 This is a [Atlas Packer](https://www.packer.io) template based on the [Atlas Packer Vagrant Tutorial](https://github.com/hashicorp/atlas-packer-vagrant-tutorial).
