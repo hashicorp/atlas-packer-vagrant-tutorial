@@ -44,4 +44,5 @@ apt-get -q -y install phpmyadmin
 php5enmod mcrypt
 rm -rf /etc/phpmyadmin/config.inc.php
 cp /tmp/data/web-config/phpmyadmin/config.inc.php /etc/phpmyadmin/config.inc.php
+ln -s /etc/phpmyadmin/apache.conf /etc/apache2/mods-enabled/phpmyadmin.conf
 service apache2 restart

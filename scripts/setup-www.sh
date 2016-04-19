@@ -45,7 +45,7 @@ chgrp -R www-data impresscms
 rar a -m5 -md512m -ow -r -s -t -tk -y -rr -k -ep1 impresscms.rar impresscms/
 rm -rf impresscms
 
-(crontab -l ; echo "@reboot sleep 20s && [ ! -d /vagrant/www ] && mkdir -p /vagrant/www && cd /vagrant/www && unrar x -y -o- /srv/backup/impresscms.rar") | crontab
+(crontab -l ; echo "@reboot sleep 20s && [ ! -d /vagrant/www ] && mkdir -p /vagrant/www && cd /vagrant/www && unrar x -y -o- /srv/backup/impresscms.rar && cd htdocs && composer install --no-ansi --no-dev --no-interaction --no-progress") | crontab
 
 echo "Setuping Memcached..."
 cd /srv/www

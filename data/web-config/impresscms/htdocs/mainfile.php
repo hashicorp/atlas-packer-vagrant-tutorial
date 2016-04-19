@@ -20,14 +20,14 @@ if (!defined("XOOPS_MAINFILE_INCLUDED")) {
 
 	// XOOPS Physical Path
 	// Physical path to your main XOOPS directory WITHOUT trailing slash
-	// Example: define( 'XOOPS_ROOT_PATH', '/srv/www/impresscms/htdocs' );
-	define( 'XOOPS_ROOT_PATH', '/srv/www/impresscms/htdocs' );
+	// Example: define( 'XOOPS_ROOT_PATH', '/vagrant/www/htdocs' );
+	define( 'XOOPS_ROOT_PATH', '/vagrant/www/htdocs' );
 
 	// XOOPS Security Physical Path
 	// Physical path to your security XOOPS directory WITHOUT trailing slash.
 	// Ideally off your server WEB folder
-	// Example: define( 'XOOPS_TRUST_PATH', '/srv/www/impresscms/cfg_6a4bab88a87eec8' );
-	define( 'XOOPS_TRUST_PATH', '/srv/www/impresscms/cfg_6a4bab88a87eec8' );
+	// Example: define( 'XOOPS_TRUST_PATH', '/vagrant/www/cfg_6a4bab88a87eec8' );
+	define( 'XOOPS_TRUST_PATH', '/vagrant/www/cfg_6a4bab88a87eec8' );
 
 	include_once XOOPS_TRUST_PATH . '/fe37f33c38f1b532c9702d63d53961af.php' ;
 
