@@ -30,6 +30,7 @@ cd impresscms
 git fetch --all
 git checkout retro
 cd htdocs
+composer install --no-interaction
 chmod ug=rwx uploads/ cache/ templates_c/ modules/
 cp -r /tmp/data/web-config/impresscms/* -t /srv/backup/impresscms
 
@@ -45,7 +46,7 @@ chgrp -R www-data impresscms
 rar a -m5 -md512m -ow -r -s -t -tk -y -rr -k -ep1 impresscms.rar impresscms/
 rm -rf impresscms
 
-(crontab -l ; echo "@reboot sleep 20s && [ ! -d /vagrant/www ] && mkdir -p /vagrant/www && cd /vagrant/www && unrar x -y -o- /srv/backup/impresscms.rar && cd htdocs && composer install --no-interaction --no-progress") | crontab
+(crontab -l ; echo "@reboot sleep 20s && [ ! -d /vagrant/www ] && touch /tmp/WWW_EXTRACTING && mkdir -p /vagrant/www && cd /vagrant/www && unrar x -y -o- /srv/backup/impresscms.rar && rm -rf /tmp/WWW_EXTRACTING") | crontab
 
 echo "Setuping Memcached..."
 cd /srv/www
