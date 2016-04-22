@@ -39,6 +39,11 @@ echo "Installing globaly composer..."
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
+echo "Copying custom shell scripts..."
+mv /tmp/data/bin/icms-extract-backup.sh /usr/local/bin/icms-extract-backup.sh
+chown vagrant:vagrant /usr/local/bin/icms-extract-backup.sh
+chmod +x /usr/local/bin/icms-extract-backup.sh
+
 echo "Installing phpMyAdmin..."
 apt-get -q -y install phpmyadmin
 php5enmod mcrypt
