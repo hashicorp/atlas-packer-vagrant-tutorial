@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 #echo "Fixing apt-get list"
 #echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily main restricted universe multiverse" > /etc/apt/sources.list
 #echo "deb mirror://mirrors.ubuntu.com/mirrors.txt wily-updates main restricted universe multiverse" >> /etc/apt/sources.list
