@@ -46,8 +46,6 @@ chgrp -R www-data impresscms
 rar a -m5 -md512m -ow -r -s -t -tk -y -rr -k -ep1 impresscms.rar impresscms/
 rm -rf impresscms
 
-(crontab -l ; echo "@reboot screen -d -m /usr/local/bin/icms-extract-backup.sh") | crontab
-
 echo "Setuping Memcached..."
 cd /srv/www
 git clone https://github.com/bainternet/Memchaced-Dashboard.git Memchaced-Dashboard

@@ -51,3 +51,6 @@ rm -rf /etc/phpmyadmin/config.inc.php
 cp /tmp/data/web-config/phpmyadmin/config.inc.php /etc/phpmyadmin/config.inc.php
 ln -s /etc/phpmyadmin/apache.conf /etc/apache2/mods-enabled/phpmyadmin.conf
 service apache2 restart
+
+echo "Installing services..."
+mv /tmp/data/etc/init/* /etc/init/
