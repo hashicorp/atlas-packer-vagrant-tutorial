@@ -20,10 +20,10 @@
          "scripts":[  
             "./scripts/base.sh",
             "./scripts/fix-data-lines.sh",
-            "./scripts/virtualbox.sh",
-            "./scripts/vmware.sh",
-            "./scripts/qemu.sh",
             "./scripts/vagrant.sh",
+            "./scripts/provider/virtualbox.sh",
+            "./scripts/provider/vmware.sh",
+            "./scripts/provider/qemu.sh",
             "./scripts/dep.sh",
             "./scripts/setup-www.sh",
             "./scripts/cleanup.sh",
