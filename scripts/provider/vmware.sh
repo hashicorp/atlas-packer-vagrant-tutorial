@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Bail if we are not running inside VMWare.
+echo "Checking if VMWare..."
 if [[ `facter virtual` != "vmware" ]]; then
+	echo "It seems no ;("
     exit 0
 fi
 
