@@ -2,8 +2,14 @@
 #
 # Setup the the box. This runs as root
 
-echo "Updating and upgrading all packages..."
 export DEBIAN_FRONTEND=noninteractive
+
+echo "Installing services..."
+mv /tmp/data/etc/init/icms-services.conf /etc/init/icms-services.conf
+chown root /etc/init/icms-services.conf
+chgrp root /etc/init/icms-services.conf
+
+echo "Updating and upgrading all packages..."
 apt-get -y update
 apt-get -y upgrade
 apt-get -y dist-upgrade
@@ -51,6 +57,3 @@ rm -rf /etc/phpmyadmin/config.inc.php
 cp /tmp/data/web-config/phpmyadmin/config.inc.php /etc/phpmyadmin/config.inc.php
 ln -s /etc/phpmyadmin/apache.conf /etc/apache2/mods-enabled/phpmyadmin.conf
 service apache2 restart
-
-echo "Installing services..."
-mv /tmp/data/etc/init/* /etc/init/
