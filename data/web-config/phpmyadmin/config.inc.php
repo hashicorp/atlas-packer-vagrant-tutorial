@@ -29,6 +29,8 @@ $i++;
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['user'] = 'icms';
+$cfg['Servers'][$i]['password'] = 'icms';
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;

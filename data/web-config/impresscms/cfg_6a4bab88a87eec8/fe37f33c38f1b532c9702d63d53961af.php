@@ -21,11 +21,11 @@ define( 'SDATA_DB_HOST', 'localhost' );
 
 // Database Username
 // Your database user account on the host
-define( 'SDATA_DB_USER', 'root' );
+define( 'SDATA_DB_USER', 'icms' );
 
 // Database Password
 // Password for your database user account
-define( 'SDATA_DB_PASS', '' );
+define( 'SDATA_DB_PASS', 'icms' );
 
 // Database Name
 // The name of database on the host. The installer will attempt to create the database if not exist

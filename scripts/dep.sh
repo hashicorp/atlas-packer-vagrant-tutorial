@@ -17,10 +17,10 @@ echo "Installing some usefull tools for development..."
 apt-get -y install keychain coreutils mc rar unrar zip unzip nano curl lynx git subversion links
 
 echo "Installing MySQL server, client and some tools..."
-apt-get -q -y install mysql-server mysql-client mysqltuner memcached
+apt-get -q -y install mysql-server mysql-client mysqltuner memcached php7.0-sqlite3 php-memcache
 
 echo "Installing web default dependencies..."
-apt-get -q -y install apache2 php php-cli php-gd mysql-client php-mysqlnd php-xdebug php-memcached php-mcrypt php-curl php-json
+apt-get -q -y install apache2 libapache2-mod-php php php-cli php-gd mysql-client php-gettext php-mbstring php-mysqlnd php-xdebug php-memcached php-mcrypt php-curl php-json
 
 echo "Installing some extra PHP libs..."
 apt-get -q -y install php-codesniffer php-imagick php-pear php-memcache php-sqlite php-mongo
