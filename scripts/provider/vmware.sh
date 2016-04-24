@@ -6,6 +6,8 @@ if [[ `facter virtual` != "vmware" ]]; then
 	echo "It seems no ;("
     exit 0
 fi
+	
+echo "It seems yes ^_^"
 
 echo "Installing the VMWare Tools from a linux ISO..."
 

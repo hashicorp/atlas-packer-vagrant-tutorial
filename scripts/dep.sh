@@ -5,9 +5,8 @@
 export DEBIAN_FRONTEND=noninteractive
 
 echo "Installing services..."
-mv /tmp/data/etc/init/icms-services.conf /etc/init/icms-services.conf
-chown root /etc/init/icms-services.conf
-chgrp root /etc/init/icms-services.conf
+mv /tmp/data/etc/systemd/system/* /etc/systemd/system/
+systemctl enable icms.service
 
 echo "Updating and upgrading all packages..."
 apt-get -y update
