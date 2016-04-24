@@ -1,0 +1,17 @@
+[Unit]
+Description=Vagrant box for ImpressCMS OS level services
+Requires=After=mysql.service
+Requires=After=ssh.service
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/icms-extract-backup.sh start-real-service
+Restart=always
+RestartSec=10                       # Restart service after 10 seconds if node service crashes
+StandardOutput=syslog               # Output to syslog
+StandardError=syslog                # Output to syslog
+SyslogIdentifier=icms
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
