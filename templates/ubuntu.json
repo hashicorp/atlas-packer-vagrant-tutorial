@@ -3,7 +3,7 @@
       "atlas_username":"ImpressCMS",
       "atlas_name":"DevBox-Ubuntu",
       "box_name":"ImpressCMS.DevBox",
-      "box_version":"0.1.0"
+      "box_version":"0.1.1"
    },
    "push":{  
       "name":"{{user `atlas_username`}}/{{user `atlas_name`}}",
