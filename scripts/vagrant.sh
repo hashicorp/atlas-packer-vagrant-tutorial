@@ -23,3 +23,7 @@ echo "Setuping vagrant folder..."
 mkdir -p /vagrant
 chown vagrant /vagrant
 chgrp vagrant /vagrant
+
+echo 'Fixing IP binding...'
+echo "auto eth1" >> /etc/network/interfaces.d/eth1
+echo "iface eth1 inet manual" >> /etc/network/interfaces.d/eth1
