@@ -6,3 +6,4 @@ nbproject/project.properties
 nbproject/project.xml
 /packer_virtualbox-iso_virtualbox.box
 test/
+*.bak
