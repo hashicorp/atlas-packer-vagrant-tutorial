@@ -3,7 +3,7 @@
       "atlas_username":"ImpressCMS",
       "atlas_name":"DevBox-Ubuntu",
       "box_name":"ImpressCMS.DevBox",
-      "box_version":"0.1.1"
+      "box_version":"0.1.2"
    },
    "push":{  
       "name":"{{user `atlas_username`}}/{{user `atlas_name`}}",
@@ -77,9 +77,9 @@
          "disk_size":20480,
          "guest_os_type":"Ubuntu",
          "http_directory":"http",
-         "iso_checksum":"494c03028524dff2de5c41a800674692",
+         "iso_checksum":"8428cead4ee139873da19248590e354f",
          "iso_checksum_type":"md5",
-         "iso_url":"http://releases.ubuntu.com/16.04/ubuntu-16.04-server-i386.iso",
+         "iso_url":"http://releases.ubuntu.com/16.04.3/ubuntu-16.04.3-server-i386.iso",
          "ssh_username":"vagrant",
          "ssh_password":"vagrant",
          "ssh_port":22,
