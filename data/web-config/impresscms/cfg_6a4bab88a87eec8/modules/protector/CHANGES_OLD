@@ -1,0 +1,389 @@
+[xlang:en]
+= CHANGES = 
+
+CHANGES are moved into README after 2.57
+
+2.57 (2006/07/17)
+- fixed treating blob on backing up in prefix_manager (thx fbs777)
+- fixed some notices
+- updated gticket into version2
+- disabled onInstall (2.57a)
+
+2.56 (2006/03/30)
+- modified error handling when config can't be received
+- modified DOS/CRAWLER skipping for nocommon=1 module (thx sleo577)
+- updated german (thx rene) 2.56a
+
+2.55 (2006/02/11)
+- fixed anti-multiple-content-type allows .tar.gz (thx gusagi)
+- updated mymenu for compatibility with XC2.1
+- updated Spanish language files (thx bezoops)
+
+2.54 (2005/12/08)
+- added backup feature into prefix_manager (experimental)
+- added a check multiple dot file uploading (=multiple content-type for apache)
+- updated portuguesebr language files (thx Izzy)
+- modified anti camouflaged image file uploading system with some open_basedir restrictions (thx stefan88) - 2.54a
+- modified some initial settings and documents - 2.54a
+
+2.53 (2005/11/30)
+ - added anti camouflaged image file upload (==IE Content-Type XSS)
+ - modified the action when DB is busy
+ - fixed some bugs cause Notices
+ - modified imcompatibities with XOOPS 2.2.3
+ - moved document files under docs/ (for hiding protector's version)
+ - updated mymenu into 0.15a
+ - modified the action against PHP_SELF/PATH_INFO XSS
+ - modified the module icon (thx Argon)
+ - updated and renamed Polish language files from polski (thx Tomasz)
+ - updated French language files (thx marco)
+ - updated Italian language files (thx Defkon1)
+ - fixed packaging errors in zip files (thx Dave_L) 2.53a
+
+2.52 (2005/8/27)
+ - changed the feature of disabling xmlrpc.php in any path (wordpress etc.)
+ - modified the logging rule about xmlrpc.php
+ - added Russian language files (thx Sergey)
+
+2.51 (2005/8/24)
+ - added an option of IP mask bits against session hi-jacking
+ - added an advisory about session.use_trans_sid
+ - modified codes against PHP_SELF XSS
+ - updated French language files (thx HEMON)
+
+2.50 release (2005/8/22)
+ - added a protection against PHP_SELF XSS
+ - updated Brazilian Portuguese & Spanish language files (thx Yuji)
+
+2.50 beta2 (2005/7/31)
+ - changed "2.0.9.2 holes" into "disable features"
+ - added "num" select box
+ - updated Traditional Chinese language files (thx Kikuchi)
+ - updated Brazilian Portuguese & Spanish language files (thx Yuji)
+
+2.50 beta1 (2005/7/22)
+ - added an option "DOS/CRAWLER skip modules"
+ - modified adding some indexes of tables which protector accesses
+ - added an option "reliable IPs"
+ - added a feature of anti-BruteForceAttacks
+
+2.40 release (2005/7/21)
+ - added a protection from 'criteria attack' for xoops <= 2.0.10*
+ - modified Italian language files (thx Defkon1)
+ - added Finnish language files (thx kokko)
+ - added Polish language files (thx Tomasz)
+
+2.40RC2 (2005/4/4)
+ - modified the updating routine to delete old protector block (thx Dava_L)
+ - updated Brazilian Portuguese & Spanish language files (thx Yuji)
+
+2.40RC (2005/3/31)
+ - modified URI of attacking simulation in advisory (thx satanas)
+ - modified checking *check.inc.php included in advisory (thx peter & Dave_L)
+ - modified password for disabling bad_ips to be encrypted
+ - eliminate protector block
+ - modified only GET vars will be checked with "doubtful file spec"
+
+2.38 (2005/3/18)
+ - modified system of rollbacking .htaccess in DoS or CRAWLER
+ - updated Italian language files (thx Defkon1)
+
+2.37 (2005/3/9)
+ - fixed missing dbname quoting in prefix manager (thx king76)
+ - modified log level of Null-byte to 64
+
+2.36 (2005/3/9)
+ - modified the pattern of bad_ext
+
+2.35 (2005/3/5)
+ - updated myblocksadmin 0.27 & mymenu 0.12
+ - added a logging level
+ - added an option for disabling whole of Protector for debugging (thx Dave_L)
+ - updated Traditional Chinese language files (thx Kikuchi)
+ - updated French language files (thx HEMON) 2.35a
+ - updated Brazilian Portuguese & Spanish language files (thx Yuji) 2.35a
+
+2.34 (2005/2/18)
+ - fixed a typo in protecting session hijacking (thx blues)
+ - modified messages on forced exiting against specifical features (thx suin)
+ - added an option of 'Deny by .htaccess' against DoS experimentaly
+
+2.33 (2005/2/11)
+ - modified the action when '../../' found (thx mayor)
+ - modified IP check disabled with XoopsGTicket
+
+2.32 (2005/2/1)
+ - modified enabling "MySQL/Blocks debug" with strict checking (thx jseymour)
+
+2.31 (2005/1/30)
+ - fixed recognization of root controllers (thx nobunobu)
+ - modified compatibility with IIS (thx okuhiki)
+ - updated French language files (thx HMN)  (2.31a)
+ - added German language files (thx Rene)  (2.31b)
+
+2.30 release (2005/1/30)
+ - modified some default values of configs.
+ - updated Italian language files (thx Defkon1)
+ - updated Brazilian Portuguese & Spanish language files (thx Yuji)
+ - added Dutch language files (thx Dirk Louwers)
+
+2.30RC5 (2005/1/22)
+ - fixed some non-harmful typos
+ - updated Italian language files (thx Defkon1)
+
+2.30RC4 (2005/1/21)
+ - fixed postcheck.inc.php with $xoopsConfig['nocommon'] (thx dendeke)
+
+2.30RC3 (2005/1/21)
+ - modified anti null-byte from die to sanitize
+ - modified prefix manager a little
+ - added French language files (thx HMN)
+ - added Italian language files (thx Defkon1)
+
+2.30RC2 (2005/1/20)
+ - fixed prefix manager
+
+2.30RC (2005/1/19)
+ - added prefix manager
+ - added 2.0.9.2 specific patches (Special thx to zx team!)
+ - added checker against null-byte attack
+ - modified doubtful file specifications (thx minahito)
+ - added anti session hi-jacking
+ - added include/postcheck.inc.php (Notice: mainfile.php should be rewritten)
+ - modified options about contami & SQL Injections
+
+2.22 (2005/1/4) (not so important fixes)
+ - fixed a typo in check_dos_attack_* (thx Mithrandir)
+ - modified with REQUEST_URI for IIS
+ - updated myblocksadmin 0.22 & mymenu 0.07
+
+2.21 (2004/12/31)
+ - fixed a missing pattern with contami checking (thx onokazu)
+
+2.20 (2004/12/27)
+ - fixed a missing pattern with contami checking (thx JM2)
+ - fixed typo missing global for HTTP_*_VARS
+ - added logging doubtful file spec
+ - updated Brazilian Portuguese & Spanish language files (thx Marcelo Yuji Himoro)
+ - updated traditional Chinese language files (thx Kikuchi)
+
+2.20RC3 (2004/12/18)
+ - added "Patch doubtful file specifications" (thx JM2)
+ - added Spanish language files (thx Marcelo Yuji Himoro)
+
+2.20RC2 (2004/12/16)
+ - updated myblocksadmin (0.12) & mymenu (0.06)
+ - modified Brazilian Portuguese language files (thx Marcelo Yuji Himoro)
+
+2.20RC (2004/12/15)
+ - modified to use $_GET or $_POST instead of $HTTP_*_VARS (for PHP5)
+ - added a feature to rescue
+ - added to store user_agent
+ - modified Anti-DoS routine radically
+ - added each settings of "F5 attacks" and "high load crawlers"
+ - fixed not to "Force intval" against array
+ - modified a pattern finding UNION
+
+2.11 (2004/9/30)
+ - fixed some typos
+
+2.10a (2004/9/27)
+ - modified Brazilian Portuguese language files (thx Marcelo Yuji Himoro)
+
+2.10 (2004/9/22)
+ - added checker to uploaded files
+ - added security advisory
+ - modified as selectable whether sanitizing or not against SQL Injections
+ - fixed short tags (thx t_miyabi)
+ - added traditional Chinese language files (thx Kikuchi)
+
+2.01 (2004/9/11)
+ - added some checks of contamination to some super globals
+ - modified Brazilian Portuguese language files (thx Marcelo Yuji Himoro)
+
+2.0  (2004/9/10)
+ - The 1st release as Xoops Protector.
+
+
+
+[/xlang:en][xlang:ja]
+
+¡üÊÑ¹¹ÍúÎò
+
+3.0°Ê¹ß¤Ë¤Ä¤¤¤Æ¤ÏREADMEÆâ¤Ë°ÜÆ°
+
+2.57 (2006/07/17)
+- ¥×¥ì¥Õ¥£¥Ã¥¯¥¹¥Þ¥Í¡¼¥¸¥ã¤Î¥Ð¥Ã¥¯¥¢¥Ã¥×¤ÇBLOB¤Î½èÍý¤¬¤ª¤«¤·¤«¤Ã¤¿¤Î¤ò½¤Àµ (thx fbs777)
+- ¤¤¤¯¤Ä¤«½Ð¤Æ¤¤¤ëNotice¤ò½¤Àµ
+- gticket2 ¤Ë¹¹¿·
+- onInstall½èÍý¤ò¤ä¤á¤¿ (2.57a)
+
+2.56 (2006/03/30)
+- ¥³¥ó¥Õ¥£¥°¤¬¼è¤ì¤Ê¤¤¤È¤­¤Î¥¨¥é¡¼½èÍý¤ò¶¯À©½ªÎ»¤ËÊÑ¹¹¤·¤¿
+- common.php¤òÆÉ¤ß¹þ¤Þ¤Ê¤¤¥â¥¸¥å¡¼¥ë¤Ë¤Ä¤¤¤Æ¤â¡¢DOS/CRAWLER½èÍý¤Ë¤«¤«¤é¤Ê¤¤ÀßÄê¤òÍ­¸ú¤Ë¤·¤¿
+
+2.55 (2006/02/11)
+- Ê£¿ô¤Î.¤¬Â¸ºß¤¹¤ë¥Õ¥¡¥¤¥ë¤Ç¤â¡¢.tar.gz¤À¤±¤ÏÄÌ¤¹¤è¤¦¤Ë½¤Àµ (thx gusagi)
+- mymenu¤Ë¤ª¤±¤ëXoopsCube 2.1¤È¤Î¸ß´¹À­ÌäÂê²ò¾Ã
+- ¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¹¹¿· (thx bezoops)
+
+2.54 (2005/12/08)
+- PREFIX¥Þ¥Í¡¼¥¸¥ã¤ËPREFIXËè¤Î¥Ð¥Ã¥¯¥¢¥Ã¥×µ¡Ç½¤ò¤Ä¤±¤¿ (¤Þ¤À¼Â¸³ÃÊ³¬¤Ç¤¹!)
+- Ê£¿ô¤Î.¤¬Â¸ºß¤¹¤ë¥Õ¥¡¥¤¥ë¤ò¥¢¥Ã¥×¥í¡¼¥É½ÐÍè¤Ê¤¤¤è¤¦¤ËÊÑ¹¹ (Apache¤Î»ÅÍÍÂÐºö)
+- ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¥Õ¥¡¥¤¥ë¤Î¹¹¿· (thx Izzy)
+- µ¶Áõ²èÁü¥Õ¥¡¥¤¥ë¥Á¥§¥Ã¥«¡¼¤¬open_basedirÀ©¸Â¤Ë¤Ò¤Ã¤«¤«¤Ã¤Æ¤¤¤¿¤Î¤ò½¤Àµ (thx stefan88) - 2.54a
+- ³Æ¼ïÀßÄê¤Î½é´üÃÍ¤ò¤¤¤¯¤Ä¤«¤È¡¢¥É¥­¥å¥á¥ó¥È¤Î½¤Àµ - 2.54a
+
+2.53 (2005/11/30)
+ - µ¶Áõ²èÁü¥Õ¥¡¥¤¥ë¥¢¥Ã¥×¥í¡¼¥É¤Ë¤è¤ëIE¤ÎXSSÂÐºö¥³¡¼¥É¤ÎÄÉ²Ã
+ - ¥Ç¡¼¥¿¥Ù¡¼¥¹¤¬busy»þ¤ËPath Disclosure¤È¤Ê¤Ã¤Æ¤¤¤¿ÌäÂê¤ò²þÁ±
+ - Notice¤òÈ¯À¸¤·¤Æ¤¤¤¿¤¤¤¯¤Ä¤«¤Î¥ß¥¹¤ò½¤Àµ
+ - ´ÉÍý²èÌÌ¤¬ XOOPS 2.2.3 ¤Ç¥¨¥é¡¼¤òµ¯¤³¤·¤Æ¤¤¤¿¸ß´¹À­ÌäÂê¤Î²þÁ±
+ - ¥É¥­¥å¥á¥ó¥È¤òdocs¥Ç¥£¥ì¥¯¥È¥ê¤Ë°ÜÆ° (¥É¥­¥å¥á¥ó¥È¤«¤é¤Î¥Ð¡¼¥¸¥ç¥óÏ³±ÌËÉ»ß¡Ë
+ - updated mymenu into 0.15a
+ - PHP_SELF/PATH_INFO XSSÂÐºö¤ò¤â¤¦¾¯¤·´Ë¤¯¤·¤¿¡Ê¶¯À©½ªÎ»¤«¤éurlencodeÁêÅö¤Ë¡Ë
+ - ¥â¥¸¥å¡¼¥ë¥¢¥¤¥³¥ó¤ÎÊÑ¹¹ (thx Argon)
+ - ¥Ý¡¼¥é¥ó¥É¸ì¥Õ¥¡¥¤¥ë¤Î¹¹¿· (thx Tomasz)
+ - ¥Õ¥é¥ó¥¹¸ì¥Õ¥¡¥¤¥ë¤Î¹¹¿· (thx marco)
+ - ¥¤¥¿¥ê¥¢¸ì¥Õ¥¡¥¤¥ë¤Î¹¹¿· (thx Defkon1)
+ - zip¥Õ¥¡¥¤¥ë¤Î¥Ñ¥Ã¥±¡¼¥¸¥ß¥¹¤ò½¤Àµ (thx Dave_L) 2.53a
+
+2.52 (2005/8/27)
+ - WordPress¥â¥¸¥å¡¼¥ëÅù¤Ë¤Ä¤¤¤Æ¤â¡¢xmlrpc.phpµ¡Ç½¤òÌµ¸ú²½¤¹¤ë¤è¤¦¤Ë»ÅÍÍÊÑ¹¹
+ - xmlrpc ¹¶·â¤Ë¤Ä¤¤¤Æ¤Î¥í¥°¤¬½ÅÊ£½ÐÎÏ¤µ¤ì¤Ê¤¤¤è¤¦¤Ë»ÅÍÍÊÑ¹¹
+ - ¥í¥·¥¢¸ì¥Õ¥¡¥¤¥ëÄÉ²Ã (thx Sergey)
+
+2.51 (2005/8/24)
+ - ¥»¥Ã¥·¥ç¥ó¥Ï¥¤¥¸¥ã¥Ã¥¯ÂÐºö¤Ç¡¢IP¥Þ¥¹¥¯¤ò»ØÄê¤Ç¤­¤ë¤è¤¦¤Ë¤·¤¿
+ - session.use_trans_sid ¤Ë¤Ä¤¤¤Æ¤ÎÃí°Õ½ñ¤­ÄÉ²Ã
+ - PHP_SELF XSS ÂÐºö¥³¡¼¥É¤Î²þÁ±
+ - ¥Õ¥é¥ó¥¹¸ì¥Õ¥¡¥¤¥ë¹¹¿· (thx HEMON)
+
+2.50 Àµ¼°ÈÇ (2005/8/22)
+ - PHP_SELF XSS ÂÐºö¥³¡¼¥ÉÄÉ²Ã
+ - ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¡¦¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Yuji)
+
+2.50 beta2 (2005/7/31)
+ - "2.0.9.2¤Î·ê"¤È¤¤¤¦Y/N¤ÎÀßÄê¹àÌÜ¤ò¡¢ÁªÂò¼°¤Î"µ¡Ç½Ìµ¸ú²½"¤ËÊÑ¹¹¤·¤¿
+ - ¥í¥°´ÉÍý¤Ç¥Ú¡¼¥¸¤¢¤¿¤ê¤ÎÉ½¼¨·ï¿ô¤òÊÑ¹¹¤Ç¤­¤ë¤è¤¦¤Ë¤·¤¿
+ - ÈËÂÎÃæ¹ñ¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Kikuchi)
+ - ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¡¦¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Yuji)
+
+2.50 beta1 (2005/7/22)
+ - ¡ÖDoS/Crawler¥Á¥§¥Ã¥¯¤ò¥¹¥­¥Ã¥×¤¹¤ë¥â¥¸¥å¡¼¥ë¡×¤È¤¤¤¦¥ª¥×¥·¥ç¥ó¤ÎÄÉ²Ã
+ - index¤ò¤Ä¤±Ëº¤ì¤Æ¤¤¤¿¥Õ¥£¡¼¥ë¥É¤Ë¤¢¤é¤¿¤á¤ÆindexÉÕÍ¿
+ - ¡Ö¿®ÍÑ¤¹¤ëIP¥¢¥É¥ì¥¹¡×¥ª¥×¥·¥ç¥ó¤ÎÄÉ²Ã
+ - ¥Ñ¥¹¥ï¡¼¥ÉÁíÅö¤¿¤êÊý¼°¤Ø¤ÎÂÐ¹³ºöÄÉ²Ã
+
+2.40 Àµ¼°ÈÇ (2005/7/21)
+ - criteria attack ¤Ø¤ÎÂÐºö¥³¡¼¥ÉÄÉ²Ã (xoops <= 2.0.10*ÍÑ)
+ - ¥¤¥¿¥ê¥¢¸ì¥Õ¥¡¥¤¥ë¹¹¿· (thx Defkon1)
+ - ¥Õ¥£¥ó¥é¥ó¥É¸ì¥Õ¥¡¥¤¥ëÄÉ²Ã (thx kokko)
+ - ¥Ý¡¼¥é¥ó¥É¸ì¥Õ¥¡¥¤¥ëÄÉ²Ã (thx Tomasz)
+
+2.40RC2 (2005/4/4)
+ - ¥â¥¸¥å¡¼¥ë¥¢¥Ã¥×¥Ç¡¼¥È»þ¤Ë¥Ö¥í¥Ã¥¯¤òºï½ü¤¹¤ë¤è¤¦¤Ë¤·¤¿ (thx Dava_L)
+ - ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¡¦¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Yuji)
+
+2.40RC (2005/3/31)
+ - ¥Ö¥í¥Ã¥¯¤Ç¤Î¥Á¥§¥Ã¥¯¤ÎÁ´ÇÑ
+ - Æ°ºî¥Á¥§¥Ã¥¯ÍÑURI¤Î½¤Àµ (thx satanas)
+ - *check.inc.php¤¬¸ú¤¤¤Æ¤¤¤ë¤«¤É¤¦¤«¤Î¥Á¥§¥Ã¥¯ÊýË¡¤ò½¤Àµ (thx peter & Dave_L)
+ - IPµñÈÝ²ò½ü¥Ñ¥¹¥ï¡¼¥É¤Î¼«Æ°¥Ï¥Ã¥·¥å²½
+ - ¡Öµ¿¤ï¤·¤¤¥Õ¥¡¥¤¥ë»ØÄê¤Î¶Ø»ß¡×¤ò¡¢GET¤À¤±¤òÂÐ¾Ý¤Ë¤¹¤ë¤è¤¦¤Ë¤·¤¿
+
+2.38 (2005/3/18)
+ - DoSÂÐºö¤Ê¤É¤Ç¡¢.htaccess DENY¤ò»È¤¦¾ì¹ç¡¢¥Õ¥¡¥¤¥ë¤¬²õ¤ì¤¿»þ¤Î¥í¡¼¥ë¥Ð¥Ã¥¯ÄÉ²Ã
+ - ¥¤¥¿¥ê¥¢¸ì¸À¸ì¥Õ¥¡¥¤¥ë¤Î¹¹¿· (thx Defkon1)
+
+2.37 (2005/3/9)
+ - prefix manager ¤ÇDBÌ¾¤Î¥¯¥ª¡¼¥Æ¥£¥ó¥°Ëº¤ì¤ò½¤Àµ (thx king76)
+ - Null-byte ¤â¡¢quite ¤Ç¾Ã¤¨¤ë¤è¤¦¤Ë
+
+2.36 (2005/3/9)
+ - ¶Ø»ß³ÈÄ¥»Ò¤ËÈ´¤±¤¬¤¢¤Ã¤¿¤Î¤ò½¤Àµ
+
+2.35 (2005/3/5)
+ - updated myblocksadmin 0.27 & mymenu 0.12
+ - ¥í¥°¥ì¥Ù¥ë¤ÎÆ³Æþ¡Ê¾Ü¤·¤¯¤ÏMEMO»²¾È¡Ë
+ - °ì»þÅª¤ËÁ´ÂÎ¤ÎÆ°ºî¤òOff¤Ë¤¹¤ë¥ª¥×¥·¥ç¥ó¤ò¤Ä¤±¤¿ (thx Dave_L)
+ - ÈËÂÎÃæ¹ñ¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Kikuchi)
+ - ¥Õ¥é¥ó¥¹¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx HEMON) 2.35a
+ - ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¡¦¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Yuji) 2.35a
+
+2.34 (2005/2/18)
+ - ¥»¥Ã¥·¥ç¥ó¥Ï¥¤¥¸¥ã¥Ã¥¯ÂÐºö¤Ç¥²¥¹¥È¤Î½èÍý¤ò´Ö°ã¤Ã¤Æ¤¤¤¿¤Î¤ò½¤Àµ (thx blues)
+ - ÆÃÄê¥Ñ¥¿¡¼¥óËÉ¸æ¤Ç¶¯À©½ªÎ»¤¹¤ë¾ì¹ç¤Î¥á¥Ã¥»¡¼¥¸¤ò½¤Àµ (thx suin)
+ - DoS·ÏËÉ¸æ¤Ç¡¢.htaccess ¤Ë DENY FROM ¤ò½ñ¤­¹þ¤à¤È¤¤¤¦¥ª¥×¥·¥ç¥ó¤ò¼Â¸³Åª¤ËÄÉ²Ã
+
+2.33 (2005/2/11)
+ - ¡Öµ¿¤ï¤·¤¤¥Õ¥¡¥¤¥ë»ØÄê¡×¤ÇÌµ¸Â¤Ë .¤¬Áý¤¨¤ë¥³¡¼¥É¤ò½¤Àµ (thx mayor)
+ - ¥Á¥±¥Ã¥È¥·¥¹¥Æ¥à¤«¤éIP¥Á¥§¥Ã¥¯¤òÇÓ½ü
+
+2.32 (2005/2/1)
+ - Ìµ¸ú²½¤·¤Æ¤¤¤¿MySQL/¥Ö¥í¥Ã¥¯¥Ç¥Ð¥Ã¥°¤ò¥Á¥§¥Ã¥¯¤«¤±¤Æ¤«¤éÄÌ¤¹¤è¤¦¤Ë¤·¤¿ (thx jseymour)
+
+2.31 (2005/1/30)
+ - ¥â¥¸¥å¡¼¥ëÆâ¥Õ¥¡¥¤¥ë¤ò¥ë¡¼¥È¥³¥ó¥È¥í¡¼¥é¤È¸íÇ§¼±¤¹¤ëÌäÂê¤Î²ò·è (thx nobunobu)
+ - IIS¸ß´¹À­¤Î²þÁ± (thx okuhiki)
+ - ¥Õ¥é¥ó¥¹¸ì¥Õ¥¡¥¤¥ë¹¹¿· (thx HMN)  (2.31a)
+ - ¥É¥¤¥Ä¸ì¥Õ¥¡¥¤¥ë¤òÄÉ²Ã (thx Rene)  (2.31b)
+
+2.30 ¥ê¥ê¡¼¥¹ÈÇ (2005/1/30)
+ - ¤¤¤¯¤Ä¤«¤Î¥Ç¥Õ¥©¥ë¥ÈÀßÄêÃÍ¤òÊÑ¹¹¤·¤¿
+ - ¥¤¥¿¥ê¥¢¸ì¥Õ¥¡¥¤¥ë¹¹¿· (thx Defkon1)
+ - ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¡¦¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Marcelo Yuji Himoro)
+ - ¥ª¥é¥ó¥À¸ì¥Õ¥¡¥¤¥ë¤òÄÉ²Ã (thx Dirk Louwers)
+
+2.30RC5 (2005/1/22)
+ - ºÙ¤«¤Êtypo¤Î½¤Àµ (¤µ¤Û¤É½ÅÍ×¤Ç¤Ï¤Ê¤¤¤Î¤Ç¤¢¤ï¤Æ¤Æ¾å½ñ¤­¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Þ¤»¤ó)
+ - ¥¤¥¿¥ê¥¢¸ì¥Õ¥¡¥¤¥ë¹¹¿· (thx Defkon1)
+
+2.30RC4 (2005/1/21)
+ - postcheck.inc.php ¤Ë¤ª¤¤¤Æ¡¢nocommon¾õÂÖ¤Î¥¨¥é¡¼¤òFix (thx dendeke)
+
+2.30RC3 (2005/1/21)
+ - ¥Ì¥ë¥Ð¥¤¥ÈÊ¸»úÎó¤Ø¤ÎÂÐºö¤ò¡¢¶¯À©½ªÎ»¤«¤é¥µ¥Ë¥¿¥¤¥º¤ËÊÑ¹¹
+ - PREFIX ¥Þ¥Í¡¼¥¸¥ã¤ÎÈùÄ´À°
+ - ¥Õ¥é¥ó¥¹¸ì¥Õ¥¡¥¤¥ë¤òÄÉ²Ã (thx HMN)
+ - ¥¤¥¿¥ê¥¢¸ì¥Õ¥¡¥¤¥ë¤òÄÉ²Ã (thx Defkon1)
+
+2.30RC2 (2005/1/20)
+ - PREFIX ¥Þ¥Í¡¼¥¸¥ã¤Î½¤Àµ
+
+2.30RC (2005/1/19)
+ - PREFIX ¥Þ¥Í¡¼¥¸¥ã¤ÎºîÀ®
+ - 2.0.9.2¸ÇÍ­·ê¤Ø¤ÎÂÐ±þ (Special thx to zx team!)
+ - ¥Ì¥ë¥Ð¥¤¥ÈÊ¸»úÎó¤Ø¤ÎÂÐºö
+ - ¥Ç¥£¥ì¥¯¥È¥êÁÌ¤ê¥Á¥§¥Ã¥¯¤¬´Å¤«¤Ã¤¿¤Î¤ò²þÁ± (thx minahito)
+ - ¥»¥Ã¥·¥ç¥ó¥Ï¥¤¥¸¥ã¥Ã¥¯ÂÐºö¤ÎÄÉ²Ã
+ - postcheck.inc.php ¤ÎÄÉ²Ã (¥Ñ¥Ã¥Á¤ÎÅö¤ÆÊý¤¬ÊÑ¤ï¤Ã¤Æ¤¤¤Þ¤¹¡Ë
+ - ÊÑ¿ô±øÀ÷¡¦SQL Injection£²¼ï¤ÎÀßÄêÊýË¡¤òÊÑ¹¹
+
+2.22 (2005/1/4) (¤½¤ó¤Ê¤Ë½ÅÍ×¤¸¤ã¤Ê¤¤½¤Àµ¤Ç¤¹)
+ - check_dos_attack_* ¤Ë¤ª¤±¤ëtypo½¤Àµ (thx Mithrandir)
+ - IIS¤À¤ÈREQUEST_URI¤¬¼èÆÀ¤Ç¤­¤Ê¤¤¤³¤È¤Ø¤ÎÂÐ±þ
+ - updated myblocksadmin 0.22 & mymenu 0.07
+
+2.21 (2004/12/31)
+ - ÊÑ¿ô±øÀ÷¤Î¥Á¥§¥Ã¥¯Ï³¤ì½¤Àµ (thx onokazu)
+
+2.20 (2004/12/27)
+ - ÊÑ¿ô±øÀ÷¤Î¥Á¥§¥Ã¥¯Ï³¤ì½¤Àµ(thx JM2)
+ - HTTP_*_VARS ¤Îglobal»ØÄêËº¤ì½¤Àµ
+ - ¥Õ¥¡¥¤¥ë»ØÄêÁÌ¤ê¤ò¥í¥°µ­Ï¿¤¹¤ë¤è¤¦¤Ë¤·¤¿
+ - ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¡¦¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Marcelo Yuji Himoro)
+ - ÈËÂÎÃæ¹ñ¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Kikuchi)
+
+2.20RC3 (2004/12/18)
+ - ¡Öµ¿¤ï¤·¤¤¥Õ¥¡¥¤¥ë»ØÄê¤ò¶Ø»ß¤¹¤ë¡×¥ª¥×¥·¥ç¥ó¤ÎÄÉ²Ã (thx JM2)
+ - ¥¹¥Ú¥¤¥ó¸ì¥Õ¥¡¥¤¥ë¤òÄÉ²Ã (thx Marcelo Yuji Himoro)
+
+2.20RC2 (2004/12/16)
+ - updated myblocksadmin (0.12) & mymenu (0.06)
+ - ¥Ö¥é¥¸¥ë¥Ý¥ë¥È¥¬¥ë¸ì¥Õ¥¡¥¤¥ë¤ò¹¹¿· (thx Marcelo Yuji Himoro)
+
+2.20RC (2004/12/15)
+ - HTTP_*_VARS¤ÎÇæææææó¸ìýz mo6kon1)
+ - zhx Rene)  (2.31b)ò8¥is¤i õu¼…§ (2.31b)ò8ºan¤·2005/3/5¥ë¹¹¿vhlÃÝ¥ë3lu½fix m¤2) & mymen*_V¹i¹¿v¤cA& mymenu (0.06)
+ - ¥Î~¤

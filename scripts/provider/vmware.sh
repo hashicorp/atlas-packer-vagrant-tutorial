@@ -1,11 +1,15 @@
 #!/bin/bash
 
 # Bail if we are not running inside VMWare.
+echo "Checking if VMWare..."
 if [[ `facter virtual` != "vmware" ]]; then
+	echo "It seems no ;("
     exit 0
 fi
+	
+echo "It seems yes ^_^"
 
-# Install the VMWare Tools from a linux ISO.
+echo "Installing the VMWare Tools from a linux ISO..."
 
 #wget http://192.168.0.185/linux.iso -P /tmp
 mkdir -p /mnt/vmware

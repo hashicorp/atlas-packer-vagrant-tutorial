@@ -1,0 +1,9 @@
+real_app.box
+packer_cache/*
+output-virtualbox-iso/*
+/nbproject/private/
+nbproject/project.properties
+nbproject/project.xml
+/packer_virtualbox-iso_virtualbox.box
+test/
+*.bak
