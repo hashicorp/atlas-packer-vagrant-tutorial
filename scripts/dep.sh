@@ -17,13 +17,14 @@ echo "Installing some usefull tools for development..."
 apt-get -y install keychain coreutils mc rar unrar zip unzip nano curl lynx git subversion links
 
 echo "Installing MySQL server, client and some tools..."
-apt-get -q -y install mysql-server mysql-client mysqltuner memcached php7.0-sqlite3 php-memcache
+apt-get -q -y install mysql-server mysql-client mysqltuner memcached php7.2-sqlite3 php7.2-memcache
 
 echo "Installing web default dependencies..."
-apt-get -q -y install apache2 libapache2-mod-php php php-cli php-gd mysql-client php-gettext php-mbstring php-mysqlnd php-xdebug php-memcached php-mcrypt php-curl php-json
+apt-get -q -y install apache2 libapache2-mod-php7.2 php7.2 php7.2-cli php7.2-gd mysql-client php7.2-gettext php7.2-mbstring php7.2-mysqlnd php7.2-xdebug php7.2-memcached php7.2-mcrypt php7.2-curl php7.2-json
 
 echo "Installing some extra PHP libs..."
 apt-get -q -y install php-codesniffer php-imagick php-pear php-memcache php-sqlite php-mongo
+apt-get -q -y install php7.2-codesniffer php7.2-imagick php7.2-pear php7.2-memcache php7.2-sqlite php7.2-mongo
 
 echo "Installing E-mail support..."
 apt-get -q -y install sendmail
