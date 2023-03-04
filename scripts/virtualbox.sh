@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 # Bail if we are not running inside VirtualBox.
 if [[ `facter virtual` != "virtualbox" ]]; then
